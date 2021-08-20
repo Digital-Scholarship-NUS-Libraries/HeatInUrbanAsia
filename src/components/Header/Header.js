@@ -7,11 +7,12 @@ import { Link } from "gatsby"
 
 export default function Header() {
   return (
+      <Container fluid style={{backgroundColor: `#FFF`}}>
     <Container className={styles.header}>
 
-      <Link to="http://www.lib.nus.edu.sg/">
+      <Link to="/">
       <StaticImage
-        src="../../images/NUSL_logo.png"
+        src="../../images/NUSL_ARI_logo.png"
         alt="NUS LOGO"
         layout="fixed"
         loading="eager"
@@ -20,6 +21,7 @@ export default function Header() {
       />
       </Link>
 
+      </Container>
       </Container>
 
   )

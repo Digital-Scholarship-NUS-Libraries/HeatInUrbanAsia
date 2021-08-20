@@ -1,4 +1,6 @@
 import React from "react";
+import "@fontsource/roboto"
+import "@fontsource/bebas-neue"
 
 import {AnimatePresence} from 'framer-motion';
 export const wrapPageElement = ({element}) => (

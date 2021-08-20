@@ -25,7 +25,7 @@
      <Navbar />
        
      <motion.main className={styles.contentContainer}
-         initial={{ opacity: 0, x: -200 }}
+         initial={{ opacity: 0, x: 0 }}
          animate={{ opacity: 1, x: 0 }}
          exit={{ opacity: 0, x: 200 }}
          transition={{
@@ -34,7 +34,7 @@
            stiffness: 75,
            duration: 1.0
            }}>
-           <main>{children}</main>
+           {children}
        </motion.main>
  
  

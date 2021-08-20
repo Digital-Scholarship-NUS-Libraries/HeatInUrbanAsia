@@ -1,40 +1,131 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import { Container } from 'react-bootstrap'
-import Content from "../components/Content/Content.js"
+import { Link, graphql } from "gatsby"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
+import { Container, Jumbotron, Row, Col, Button, Card, CardDeck, Carousel } from 'react-bootstrap'
 
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import landmarksVideo from "../videos/sgLandmarksOptimized.mp4";
+import sgVideoPoster from "../images/sgLandmarksPoster.jpg";
+import bodiesCardImage from "../images/Icon_Bodies.jpg";
+import technologiesCardImage from "../images/Icon_Technologies3.jpg";
+import citiesCardImage from "../images/Icon_Cities.png";
+import regionCardImage from "../images/Icon_Region.png";
 
-const IndexPage = () => (
+const IndexPage = ({data}) => (
   <Layout>
     <Seo title="Home" />
-    <Container>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby NUS Libraries Starter</p>
-    <p>Now go build something great.</p>
-    </Container>
+      <Jumbotron style={{position: `relative`, zIndex: `-2`, marginTop: `220px`, marginBottom: `220px`, padding: `0`}}>
+          <video
+          preload="auto"
+          autoPlay
+          loop
+          muted
+          playsInline
+          src={landmarksVideo}
+          poster={sgVideoPoster}
+              style={{position: `fixed`, top: 0, overflow:  `hidden`, zIndex: `-1`, width: `100%`, height: `100%`, objectFit: `cover`}}
+        ></video>
+          <Row style={{margin: `0`, marginTop: `35px`, marginBottom: `35px`, textAlign: `center`}}>
+              <Col sm={{span: 6, offset: 3}} style={{padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`}}>
+                  <h1 style={{fontSize: `500%`}}>Heat in Urban Asia</h1>
+                  <p style={{fontWeight: `bold`, fontSize: `125%`}}>
+            Asian cities are getting hotter. This is partly a global problem,
+            resulting from anthropogenic climate change, and partly a local
+            problem, caused by the excessive use of concrete and energy
+            intensive technologies. With a focus on four cities in Asia ---
+            Singapore, Seoul, Delhi, and Wuhan --- this website presents data,
+            maps, stories, and images that help us to examine the past, present,
+            and future of heat in urban Asia.
+          </p>
+                  <Button href="/map" variant="secondary">Interactive Map</Button>
+              </Col>
+          </Row>
+      </Jumbotron>
+      <Jumbotron style={{backgroundColor: `#fff`, padding: `0`}}>
+          <Row style={{margin: `0`}}>
+              <Col sm={{span: 6, offset: 3}}>
+                  <h1 style={{marginTop: `60px`, textAlign: `center`}}>Explore Through Themes</h1>
+              </Col>
+          </Row>
+          <Row style={{margin: `0`}}>
+              <CardDeck style={{display: `flex`, flexWrap: `wrap`, margin: `auto`, textAlign: `center`, marginTop: `30px`, marginBottom: `60px`, justifyContent: `center`}}>
+                  <Card style={{flex: `1 0 21%`, margin: `5px`}}>
+                      <Card.Img variant="top" src={bodiesCardImage} alt="cover image" style={{maxHeight: `250px`, objectFit: `cover`, objectPosition: `top`}}/>
+                      <Card.Body style={{backgroundColor: `orange`}}>
+                          <Card.Title><Link to="/bodies" style={{color: `#000`, textDecoration:`none`}}><h3>Bodies</h3></Link></Card.Title>
+                      </Card.Body>
+                  </Card>
+                  <Card style={{flex: `1 0 21%`, margin: `5px`}}>
+                      <Card.Img variant="top" src={technologiesCardImage} alt="cover image" style={{maxHeight: `250px`, objectFit: `cover`, objectPosition: `top`}}/>
+                      <Card.Body style={{backgroundColor: `orange`}}>
+                          <Card.Title><Link to="/technologies" style={{color: `#000`, textDecoration:`none`}}><h3>Technologies</h3></Link></Card.Title>
+                      </Card.Body>
+                  </Card>
+                  <Card style={{flex: `1 0 21%`, margin: `5px`}}>
+                      <Card.Img variant="top" src={citiesCardImage} alt="cover image" style={{maxHeight: `250px`, objectFit: `cover`}}/>
+                      <Card.Body style={{backgroundColor: `orange`}}>
+                          <Card.Title><Link to="/cities" style={{color: `#000`, textDecoration:`none`}}><h3>Cities</h3></Link></Card.Title>
+                      </Card.Body>
+                  </Card>
+                  <Card style={{flex: `1 0 21%`, margin: `5px`}}>
+                      <Card.Img variant="top" src={regionCardImage} alt="cover image" style={{maxHeight: `250px`, objectFit: `cover`}}/>
+                      <Card.Body style={{backgroundColor: `orange`}}>
+                          <Card.Title><Link to="/region" style={{color: `#000`, textDecoration:`none`}}><h3>Region</h3></Link></Card.Title>
+                      </Card.Body>
+                  </Card>
+              </CardDeck>
+          </Row>
+          <Row style={{margin: `0`}}>
+              <Col sm={{span: 6, offset: 3}}>
+                  <h1 style={{textAlign: `center`}}>Selected Articles</h1>
+              </Col>
+          </Row>
+          <Row style={{margin: `0`, textAlign: `center`, paddingBottom: `120px`}}>
+              <Carousel interval={3000} fade style={{width: `100%`, marginTop: `60px`}}>
+                  {data.allGoogleDocs.nodes.map((oneArticle, index) => {
+                      return (
+                          <Carousel.Item key={index} style={{height: `450px`}}>
+                              <GatsbyImage
+                                  image={oneArticle.cover.image.childImageSharp.gatsbyImageData}
+                                  alt={oneArticle.name.split("_").pop()}
+                                  objectFit="cover"
+                                  objectPosition="50% 50%"
+                              />
+                              <Carousel.Caption>
+                                  <Link to={oneArticle.slug} style={{display: `block`, padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`, color: `#000`, textDecoration:`none`}}><h2>{oneArticle.name.split("_").pop()}</h2></Link>
+                              </Carousel.Caption>
+                          </Carousel.Item>
+                      )
+                  })}
+              </Carousel>
+          </Row>
+      </Jumbotron>
 
-    <Content />
-
-
-    <Container>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-    </Container>
   </Layout>
 )
+
+export const query = graphql`
+  query carouselArticles {
+      allGoogleDocs(
+    limit: 3
+    filter: {path: {regex: "/^/0[^5].*/"}, cover: {image: {size: {gt: 10}}}}
+    sort: {order: DESC, fields: date}
+  ) {
+    nodes {
+      name
+      slug
+      cover {
+        image {
+          childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
+      }
+    }
+  }
+  }
+`
 
 export default IndexPage

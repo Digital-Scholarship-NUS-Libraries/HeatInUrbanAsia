@@ -13,7 +13,7 @@ export default function Footer(props) {
   <Container className={styles.footer}>
     <Container className={styles.footerTop}>
     <Row>
-      <Col xs={4} sm={4} lg={4} className="d-none d-sm-none d-lg-block">
+        {/*<Col xs={4} sm={4} lg={4} className="d-none d-sm-none d-lg-block">
         <h2>Resource Librarians</h2>
           <ListGroup className={styles.footer_listItem}>
             <li> <a href="http://libguides.nus.edu.sg/areastudies" target="_blank" rel="noopener noreferrer">Area Studies</a></li>
@@ -48,31 +48,37 @@ export default function Footer(props) {
             <li> <a href="/frontend/ms/science-library/about-science-library" target="_self">Science Library</a></li>
             <li> <a href="http://library.yale-nus.edu.sg" target="_blank" rel="noopener noreferrer">Yale-NUS College Library</a></li>
           </ListGroup>
-      </Col>
+      </Col>*/}
 
+      <Col xs={12} sm={12} lg={4} className="d-none d-sm-none d-lg-block">
+      <Col className={styles.footerMin}>
+        <Row className={styles.footerMinContent}>
+          <ListGroup className={styles.footer_listItem}>
+          <h2>Asia Research Institute</h2>
+            <li>
+              <span><a href="https://ari.nus.edu.sg/">ari.nus.edu.sg</a><br /></span>
+            </li>
+          </ListGroup> 
+        </Row>
+      </Col>
+      </Col>
 
       <Col xs={12} sm={12} lg={4} className="d-none d-sm-none d-lg-block">
       <Col className={styles.footerMin}>
         <Row className={styles.footerMinContent}>
           <ListGroup className={styles.footer_listItem}>
           <h2>NUS Libraries</h2>
-            <li>  <FontAwesomeIcon icon={faLocationArrow} className={styles.icon}/>
-              <pre className={styles.address}>Central Library{'\n'}
-              12 Kent Ridge Crescent{'\n'}
-              Singapore 119275</pre>
-              </li>
-            <li><FontAwesomeIcon icon={faPhoneAlt} className={styles.icon}/><span>+65 6516 2028</span></li>
-            <li><FontAwesomeIcon icon={faEnvelope} className={styles.icon}/>
-              <span><a href="mailto:askalib@nus.edu.sg" target="_self">askalib@nus.edu.sg</a><br /></span>
+            <li>
+              <span><a href="https://libportal.nus.edu.sg">libportal.nus.edu.sg</a><br /></span>
             </li>
           </ListGroup> 
         </Row>
 
-        <Row className={styles.footerMinContent}>
+          {/*<Row className={styles.footerMinContent}>
           <Nav>
             <Nav.Link href="https://www.facebook.com/NUSLibraries" target="_blank" className={styles.img}>      
               <StaticImage
-                src="../../images/facebook"
+                src="../../images/facebook.png"
                 alt="facebook"
                 heihgt={32}
                 width={32}
@@ -84,7 +90,7 @@ export default function Footer(props) {
             </Nav.Link>
             <Nav.Link href="https://twitter.com/NUSlibraries" target="_blank" className={styles.img}>              
               <StaticImage
-                  src="../../images/twitter"
+                  src="../../images/twitter.png"
                   alt="twitter"
                   heihgt={32}
                   width={32}
@@ -96,7 +102,7 @@ export default function Footer(props) {
             </Nav.Link>
             <Nav.Link href="https://instagram.com/nuslibraries" target="_blank" className={styles.img}>
               <StaticImage
-                  src="../../images/instagram"
+                  src="../../images/instagram.png"
                   alt="instagram"
                   heihgt={32}
                   width={32}
@@ -108,7 +114,7 @@ export default function Footer(props) {
             </Nav.Link>
             <Nav.Link href="http://blog.nus.edu.sg/linus/" target="_blank" className={styles.img}>
               <StaticImage
-                    src="../../images/word"
+                    src="../../images/word.png"
                     alt="word"
                     heihgt={32}
                     width={32}
@@ -120,7 +126,7 @@ export default function Footer(props) {
             </Nav.Link>
             <Nav.Link href="https://www.youtube.com/user/nuslibraries" target="_blank" className={styles.img}>
               <StaticImage
-                      src="../../images/youtube"
+                      src="../../images/youtube.png"
                       alt="youtube"
                       heihgt={32}
                       width={32}
@@ -132,7 +138,7 @@ export default function Footer(props) {
             </Nav.Link>
             <Nav.Link href="https://www.flickr.com/photos/nuslibraries" target="_blank" className={styles.img}>
               <StaticImage
-                      src="../../images/flickr"
+                      src="../../images/flickr.png"
                       alt="flickr"
                       heihgt={32}
                       width={32}
@@ -143,7 +149,7 @@ export default function Footer(props) {
                     />
             </Nav.Link>
           </Nav>
-        </Row>
+        </Row>*/}
         </Col>
       </Col>
 
@@ -151,34 +157,28 @@ export default function Footer(props) {
         <Row className={styles.footerMinContent}>
           <ListGroup className={styles.footer_listItemMin}>
           <h2 className={styles.footerMinContentHeader}>NUS Libraries</h2>
-            <li>  <FontAwesomeIcon icon={faLocationArrow} className={styles.icon}/>
-              <pre className={styles.address}>Central Library{'\n'}
-              12 Kent Ridge Crescent{'\n'}
-              Singapore 119275</pre>
-              </li>
-            <li><FontAwesomeIcon icon={faPhoneAlt} className={styles.icon}/><span style={{whiteSpace: 'pre-wrap'}}>+65 6516 2028</span></li>
-            <li><FontAwesomeIcon icon={faEnvelope} className={styles.icon}/>
-              <span><a href="mailto:askalib@nus.edu.sg">askalib@nus.edu.sg</a><br /></span>
+            <li>
+              <span><a href="https://libportal.nus.edu.sg">libportal.nus.edu.sg</a><br /></span>
             </li>
           </ListGroup> 
         </Row>
 
-        <Row className={styles.footerMinContent}>
+          {/*<Row className={styles.footerMinContent}>
           <Nav>
-            <Nav.Link href="https://www.facebook.com/NUSLibraries" target="_blank" className={styles.img}><img src="facebook" style={{height: 32, width: 32}} alt="facebook" />
+            <Nav.Link href="https://www.facebook.com/NUSLibraries" target="_blank" className={styles.img}><img src="facebook.png" style={{height: 32, width: 32}} alt="facebook" />
             </Nav.Link>
-            <Nav.Link href="https://twitter.com/NUSlibraries" target="_blank" className={styles.img}><img src="twitter" style={{height: 32, width: 32}} alt="twitter" />
+            <Nav.Link href="https://twitter.com/NUSlibraries" target="_blank" className={styles.img}><img src="twitter.png" style={{height: 32, width: 32}} alt="twitter" />
             </Nav.Link>
-            <Nav.Link href="https://instagram.com/nuslibraries" target="_blank" className={styles.img}><img src="instagram" style={{height: 32, width: 32}} alt="instagram" />
+            <Nav.Link href="https://instagram.com/nuslibraries" target="_blank" className={styles.img}><img src="instagram.png" style={{height: 32, width: 32}} alt="instagram" />
             </Nav.Link>
-            <Nav.Link href="http://blog.nus.edu.sg/linus/" target="_blank" className={styles.img}><img src="word" style={{height: 32, width: 32}} alt="word" />
+            <Nav.Link href="http://blog.nus.edu.sg/linus/" target="_blank" className={styles.img}><img src="word.png" style={{height: 32, width: 32}} alt="word" />
             </Nav.Link>
-            <Nav.Link href="https://www.youtube.com/user/nuslibraries" target="_blank" className={styles.img}><img src="youtube" style={{height: 32, width: 32}} alt="youtube" />
+            <Nav.Link href="https://www.youtube.com/user/nuslibraries" target="_blank" className={styles.img}><img src="youtube.png" style={{height: 32, width: 32}} alt="youtube" />
             </Nav.Link>
-            <Nav.Link href="https://www.flickr.com/photos/nuslibraries" target="_blank" className={styles.img}><img src="flickr" style={{height: 32, width: 32}} alt="flickr" />
+            <Nav.Link href="https://www.flickr.com/photos/nuslibraries" target="_blank" className={styles.img}><img src="flickr.png" style={{height: 32, width: 32}} alt="flickr" />
             </Nav.Link>
           </Nav>
-        </Row>
+        </Row>*/}
       </Col>
       
 
@@ -186,7 +186,7 @@ export default function Footer(props) {
     </Container>
 
 
-    <Container className={styles.footerCopyright} style={{display:'flex'}}>
+      {/*<Container className={styles.footerCopyright} style={{display:'flex'}}>
       <Col>
         <Row className={styles.footerBottom}>
             <p>©<a href="http://www.nus.edu.sg">National University of Singapore</a>. All Rights Reserved.</p>
@@ -200,7 +200,7 @@ export default function Footer(props) {
           </Nav>
         </Row>
       </Col>
-    </Container>
+    </Container>*/}
 
 </Container>
   )
