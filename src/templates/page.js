@@ -1,15 +1,16 @@
 import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
-import { Container, Jumbotron, Row } from 'react-bootstrap'
+import { Container, Jumbotron, Row, Col } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const pageFromGDocs = ({
   data: {
     page: {
       name,
+      author,
       cover,
       childMarkdownRemark: { html },
       description,
@@ -20,13 +21,7 @@ const pageFromGDocs = ({
   return (
     <Layout>
       <Seo title={pageTitle} description={description} />
-      <Jumbotron>
-          <h1 style={{textAlign: `center`, marginBottom: `15px`}}>{pageTitle}</h1>
-        {/*
-        To add a cover:
-        Add an image in your Google Doc first page header
-        https://support.google.com/docs/answer/86629
-      */}
+        <Jumbotron style={{backgroundColor: `#fff`, padding: `0`}}>
         {cover && (
           <GatsbyImage
             image={cover.image.childImageSharp.gatsbyImageData}
@@ -35,9 +30,15 @@ const pageFromGDocs = ({
               style={{height: `400px`, display: `flex`, justifyContent: `center`, marginBottom: `15px`}}
           />
         )}
+          <h1 style={{textAlign: `center`, marginBottom: `15px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, color: `transparent`}}>{pageTitle}</h1>
+          <h3 className="author" style={{textAlign: `center`}}>Written by: {author}</h3>
       </Jumbotron>
       <Container>
+          <Row>
+              <Col md={{span: 8, offset: 2}} style={{textAlign: `justify`}}>
         <div dangerouslySetInnerHTML={{ __html: html }} />
+              </Col>
+          </Row>
       </Container>
     </Layout>
   );
@@ -47,6 +48,7 @@ export const pageQuery = graphql`
   query Page($path: String!) {
     page: googleDocs(slug: { eq: $path }) {
       name
+      author
       cover {
         alt
         title

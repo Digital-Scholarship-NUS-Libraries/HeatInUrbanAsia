@@ -3,10 +3,10 @@ import { Link, graphql } from "gatsby"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import { Container, Jumbotron, Row, Col, Button, Card, CardDeck, Carousel } from 'react-bootstrap'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import landmarksVideo from "../videos/sgLandmarksOptimized.mp4";
+import landmarksVideo from "../videos/sgLandmarksHSLcolorGradient.mp4";
 import sgVideoPoster from "../images/sgLandmarksPoster.jpg";
 import bodiesCardImage from "../images/Icon_Bodies.jpg";
 import technologiesCardImage from "../images/Icon_Technologies3.jpg";
@@ -25,10 +25,11 @@ const IndexPage = ({data}) => (
           playsInline
           src={landmarksVideo}
           poster={sgVideoPoster}
-              style={{position: `fixed`, top: 0, overflow:  `hidden`, zIndex: `-1`, width: `100%`, height: `100%`, objectFit: `cover`}}
+          type="video/mp4"
+          style={{position: `fixed`, top: 0, overflow:  `hidden`, zIndex: `-1`, width: `100%`, height: `100%`, objectFit: `cover`}}
         ></video>
           <Row style={{margin: `0`, marginTop: `35px`, marginBottom: `35px`, textAlign: `center`}}>
-              <Col sm={{span: 6, offset: 3}} style={{padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`}}>
+              <Col sm={{span: 8, offset: 2}} style={{padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`}}>
                   <h1 style={{fontSize: `500%`}}>Heat in Urban Asia</h1>
                   <p style={{fontWeight: `bold`, fontSize: `125%`}}>
             Asian cities are getting hotter. This is partly a global problem,
@@ -45,41 +46,42 @@ const IndexPage = ({data}) => (
       </Jumbotron>
       <Jumbotron style={{backgroundColor: `#fff`, padding: `0`}}>
           <Row style={{margin: `0`}}>
-              <Col sm={{span: 6, offset: 3}}>
-                  <h1 style={{marginTop: `60px`, textAlign: `center`}}>Explore Through Themes</h1>
+              <Col sm={{span: 8, offset: 2}}>
+                  <h1 style={{marginTop: `60px`, textAlign: `center`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, color: `transparent`}}>Explore Through Themes</h1>
               </Col>
           </Row>
           <Row style={{margin: `0`}}>
               <CardDeck style={{display: `flex`, flexWrap: `wrap`, margin: `auto`, textAlign: `center`, marginTop: `30px`, marginBottom: `60px`, justifyContent: `center`}}>
-                  <Card style={{flex: `1 0 21%`, margin: `5px`}}>
-                      <Card.Img variant="top" src={bodiesCardImage} alt="cover image" style={{maxHeight: `250px`, objectFit: `cover`, objectPosition: `top`}}/>
-                      <Card.Body style={{backgroundColor: `orange`}}>
-                          <Card.Title><Link to="/bodies" style={{color: `#000`, textDecoration:`none`}}><h3>Bodies</h3></Link></Card.Title>
+                  <Card style={{flex: `1 0 21%`, margin: `5px`, minWidth: `200px`}}>
+                      <Card.Img variant="top" src={bodiesCardImage} alt="cover image" style={{height: `250px`, objectFit: `cover`, objectPosition: `top`}}/>
+                      {/*<Card.Body style={{backgroundColor: `orange`}}>*/}
+                      <Card.Body>
+                          <Card.Title><Link to="/bodies" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, color: `transparent`}}>Bodies</h2></Link></Card.Title>
                       </Card.Body>
                   </Card>
-                  <Card style={{flex: `1 0 21%`, margin: `5px`}}>
-                      <Card.Img variant="top" src={technologiesCardImage} alt="cover image" style={{maxHeight: `250px`, objectFit: `cover`, objectPosition: `top`}}/>
-                      <Card.Body style={{backgroundColor: `orange`}}>
-                          <Card.Title><Link to="/technologies" style={{color: `#000`, textDecoration:`none`}}><h3>Technologies</h3></Link></Card.Title>
+                  <Card style={{flex: `1 0 21%`, margin: `5px`, minWidth: `200px`}}>
+                      <Card.Img variant="top" src={technologiesCardImage} alt="cover image" style={{height: `250px`, objectFit: `cover`, objectPosition: `top`}}/>
+                      <Card.Body>
+                          <Card.Title><Link to="/technologies" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, color: `transparent`}}>Technologies</h2></Link></Card.Title>
                       </Card.Body>
                   </Card>
-                  <Card style={{flex: `1 0 21%`, margin: `5px`}}>
-                      <Card.Img variant="top" src={citiesCardImage} alt="cover image" style={{maxHeight: `250px`, objectFit: `cover`}}/>
-                      <Card.Body style={{backgroundColor: `orange`}}>
-                          <Card.Title><Link to="/cities" style={{color: `#000`, textDecoration:`none`}}><h3>Cities</h3></Link></Card.Title>
+                  <Card style={{flex: `1 0 21%`, margin: `5px`, minWidth: `200px`}}>
+                      <Card.Img variant="top" src={citiesCardImage} alt="cover image" style={{height: `250px`, objectFit: `cover`}}/>
+                      <Card.Body>
+                          <Card.Title><Link to="/cities" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, color: `transparent`}}>Cities</h2></Link></Card.Title>
                       </Card.Body>
                   </Card>
-                  <Card style={{flex: `1 0 21%`, margin: `5px`}}>
-                      <Card.Img variant="top" src={regionCardImage} alt="cover image" style={{maxHeight: `250px`, objectFit: `cover`}}/>
-                      <Card.Body style={{backgroundColor: `orange`}}>
-                          <Card.Title><Link to="/region" style={{color: `#000`, textDecoration:`none`}}><h3>Region</h3></Link></Card.Title>
+                  <Card style={{flex: `1 0 21%`, margin: `5px`, minWidth: `200px`}}>
+                      <Card.Img variant="top" src={regionCardImage} alt="cover image" style={{height: `250px`, objectFit: `cover`}}/>
+                      <Card.Body>
+                          <Card.Title><Link to="/region" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, color: `transparent`}}>Region</h2></Link></Card.Title>
                       </Card.Body>
                   </Card>
               </CardDeck>
           </Row>
           <Row style={{margin: `0`}}>
-              <Col sm={{span: 6, offset: 3}}>
-                  <h1 style={{textAlign: `center`}}>Selected Articles</h1>
+              <Col sm={{span: 8, offset: 2}}>
+                  <h1 style={{textAlign: `center`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, color: `transparent`}}>Selected Articles</h1>
               </Col>
           </Row>
           <Row style={{margin: `0`, textAlign: `center`, paddingBottom: `120px`}}>
@@ -89,12 +91,13 @@ const IndexPage = ({data}) => (
                           <Carousel.Item key={index} style={{height: `450px`}}>
                               <GatsbyImage
                                   image={oneArticle.cover.image.childImageSharp.gatsbyImageData}
-                                  alt={oneArticle.name.split("_").pop()}
-                                  objectFit="cover"
-                                  objectPosition="50% 50%"
+                                  alt={oneArticle.name}
+                                  style={{position: `initial`}}
                               />
-                              <Carousel.Caption>
-                                  <Link to={oneArticle.slug} style={{display: `block`, padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`, color: `#000`, textDecoration:`none`}}><h2>{oneArticle.name.split("_").pop()}</h2></Link>
+                              <Carousel.Caption style={{top: `20px`, bottom: `auto`, padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`, color: `#000`}}>
+                                  <Link to={oneArticle.slug} style={{display: `block`, color: `#000`, textDecoration:`none`}}><h2>{oneArticle.name.split("_").pop()}</h2>
+                                  <h3>Written by: {oneArticle.author}</h3>
+                                      <p><strong>{oneArticle.description}</strong></p></Link>
                               </Carousel.Caption>
                           </Carousel.Item>
                       )
@@ -109,12 +112,14 @@ const IndexPage = ({data}) => (
 export const query = graphql`
   query carouselArticles {
       allGoogleDocs(
-    limit: 3
-    filter: {path: {regex: "/^/0[^5].*/"}, cover: {image: {size: {gt: 10}}}}
+    limit: 4
+          filter: {cover: {image: {size: {gt: 10}}}, featured:  {eq: true}}
     sort: {order: DESC, fields: date}
   ) {
     nodes {
       name
+      author
+      description
       slug
       cover {
         image {

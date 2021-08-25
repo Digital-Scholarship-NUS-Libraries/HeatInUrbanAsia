@@ -2,8 +2,34 @@
     max-width:100% !important;
     padding:0px !important;
     font-family: "Roboto", Helvetica, Arial, Sans-serif;
+
     h1, h2, h3, h4, h5, h6 {
         font-family: "Bebas Neue", Sans-serif;
+    }
+
+    h3 {
+        font-family: "roboto", Helvetica, Arial, Sans-serif;
+    }
+
+    blockquote {
+        border-left: solid 7px;
+        padding-left: 10px;
+        border-image: linear-gradient(179deg, rgb(249, 171, 134), rgb(255, 78, 68)) 10;
+        font-style: italic;
+    }
+
+    p img {
+        width: 100%;
+    }
+    /*this needs to move in a module for the index and theme pages*/
+    .card-deck {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 60px;
+        justify-content: center;
     }
 }
 
