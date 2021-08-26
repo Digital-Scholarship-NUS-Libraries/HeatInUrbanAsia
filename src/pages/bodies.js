@@ -9,7 +9,7 @@ import Seo from "../components/seo"
 
 const BodiesPage = ({data}) => (
   <Layout>
-      <Seo title="Heat in Urban Asia: Bodies" />
+      <Seo title="Bodies" />
       <Jumbotron style={{position: `relative`, zIndex: `-2`, marginTop: `120px`, marginBottom: `120px`, padding: `0`}}>
           <StaticImage
               src="../images/Banner_Bodies.png"

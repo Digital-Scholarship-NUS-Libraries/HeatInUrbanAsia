@@ -17,7 +17,7 @@ import yoonheePortrait from "../images/Team_Yoonhee_Jung.jpg"
 
 const TeamPage = () => (
   <Layout>
-      <Seo title="Heat in Urban Asia: The Team" />
+      <Seo title="The Team" />
       <Container style={{textAlign: `justify`}}>
           <Row style={{margin: `0`}}>
               <Col md={{span: 10, offset: 1}}>

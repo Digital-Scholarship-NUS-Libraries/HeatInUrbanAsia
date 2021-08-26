@@ -9,7 +9,7 @@ import Seo from "../components/seo"
 
 const ProjectPage = () => (
   <Layout>
-      <Seo title="Heat in Urban Asia: The Project" />
+      <Seo title="The Project" />
       <Container style={{textAlign: `justify`}}>
           <Row>
               <Col md={{span: 8, offset: 2}}>
@@ -37,12 +37,12 @@ const ProjectPage = () => (
               </Col>
           </Row>
           <Row>
-              <Col md={{span: 5, offset: 2}}>
+              <Col md={{span: 6, offset: 2}}>
                   <h2 style={{marginTop: `10px`}}>Living With Heat</h2>
                   <p>The problem of heat intersects with other issues of urban inequality, causing certain social and demographic groups to suffer disproportionate levels of vulnerability.
 The everyday techniques, planning strategies, and vernacular architectural styles that have been used by different cultures at different times can provide vital resources for those planning for a hotter future. The project thus examines how various political and social processes have helped to determine exposure to heat in the past and present, and explore the social responses cataloguing how people have kept cool using low-energy, everyday alternatives to current technologies.</p>
               </Col>
-              <Col md={{span: 3}}>
+              <Col md={{span: 2}}>
                   <StaticImage
                       src="../images/outcome2.png"
                       style={{marginTop: `55px`}}
@@ -50,13 +50,13 @@ The everyday techniques, planning strategies, and vernacular architectural style
               </Col>
           </Row>
           <Row>
-              <Col md={{span: 3, offset: 2}}>
+              <Col md={{span: 2, offset: 2}}>
                   <StaticImage
                       src="../images/outcome3.png"
                       style={{marginTop: `55px`}}
                   />
               </Col>
-              <Col md={{span: 5}}>
+              <Col md={{span: 6}}>
                   <h2 style={{marginTop: `10px`}}>Disastrous Heat</h2>
                   <p>Heatwaves are one of the most lethal and economically destructive form of hazard to strike urban Asia, yet they are also probably the least understood. The project uses a multidisciplinary approach to examine heatwaves and their impacts in Singapore and other Asian cities. This part of the project builds upon a long-standing interest and expertise at ARI in disaster studies.</p>
               </Col>
