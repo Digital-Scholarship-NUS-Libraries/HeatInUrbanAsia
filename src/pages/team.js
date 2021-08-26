@@ -24,7 +24,7 @@ const TeamPage = () => (
                   <h1 style={{textAlign: `center`, marginTop: `10px`, fontSize: `500%`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, color: `transparent`}}>The Team</h1>
               <CardDeck style={{display: `flex`, flexWrap: `wrap`, margin: `auto`, textAlign: `center`, marginBottom: `60px`, justifyContent: `center`}}>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
-                      <Card.Img src={gregoryPortrait} alt="Gregory Clancey" style={{height: `300px`, objectFit: `cover`}}/>
+                      <Card.Img src={gregoryPortrait} alt="Gregory Clancey" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>
                       <Card.Body>
                           <Card.Title><h3>Associate Prof. Dr. Gregory CLANCEY</h3></Card.Title>
                           <p><em>NUS ARI (Lead PI)</em></p>
@@ -33,7 +33,7 @@ const TeamPage = () => (
                       </Card.Body>
                   </Card>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
-                      <Card.Img src={fionaPortrait} alt="Fiona Williamson" style={{height: `300px`, objectFit: `cover`}}/>
+                      <Card.Img src={fionaPortrait} alt="Fiona Williamson" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>
                       <Card.Body>
                           <Card.Title><h3>Associate Prof. Dr. Fiona WILLIAMSON</h3></Card.Title>
                           <p><em>SMU</em></p>
@@ -42,7 +42,7 @@ const TeamPage = () => (
                       </Card.Body>
                   </Card>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
-                      <Card.Img src={jiatHweePortrait} alt="Jiat-Hwee Chang" style={{height: `300px`, objectFit: `cover`}}/>
+                      <Card.Img src={jiatHweePortrait} alt="Jiat-Hwee Chang" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>
                       <Card.Body>
                           <Card.Title><h3>Associate Prof. Dr. CHANG Jiat-Hwee</h3></Card.Title>
                           <p><em>NUS Architecture</em></p>
@@ -51,7 +51,7 @@ const TeamPage = () => (
                       </Card.Body>
                   </Card>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
-                      <Card.Img src={chrisPortrait} alt="Chris Courtney" style={{height: `300px`, objectFit: `cover`}}/>
+                      <Card.Img src={chrisPortrait} alt="Chris Courtney" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>
                       <Card.Body>
                           <Card.Title><h3>Associate Prof. Dr. Chris COURTNEY</h3></Card.Title>
                           <p><em>Durham University</em></p>
@@ -60,7 +60,7 @@ const TeamPage = () => (
                       </Card.Body>
                   </Card>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
-                      <Card.Img src={yoonheePortrait} alt="Yonhee Jung" style={{height: `300px`, objectFit: `cover`}}/>
+                      <Card.Img src={yoonheePortrait} alt="Yonhee Jung" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>
                       <Card.Body>
                           <Card.Title><h3>Dr. Yoonhee JUNG</h3></Card.Title>
                           <p><em>NUS ARI</em></p>
@@ -69,7 +69,7 @@ const TeamPage = () => (
                       </Card.Body>
                   </Card>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
-                      <Card.Img src={ashawariPortrait} alt="Ashawari Chaudhuri" style={{height: `300px`, objectFit: `cover`}}/>
+                      <Card.Img src={ashawariPortrait} alt="Ashawari Chaudhuri" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>
                       <Card.Body>
                           <Card.Title><h3>Dr. Ashawari CHAUDHURI</h3></Card.Title>
                           <p><em>NUS ARI</em></p>
@@ -85,7 +85,7 @@ const TeamPage = () => (
                   <h1 style={{textAlign: `center`, marginTop: `10px`, fontSize: `500%`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, color: `transparent`}}>Research Assistants</h1>
               <CardDeck style={{display: `flex`, flexWrap: `wrap`, margin: `auto`, textAlign: `center`, marginBottom: `60px`, justifyContent: `center`}}>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
-                      <Card.Img src={gracePortrait} alt="Grace Chong En Ting" style={{height: `300px`, objectFit: `cover`}}/>
+                      <Card.Img src={gracePortrait} alt="Grace Chong En Ting" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>
                       <Card.Body>
                           <Card.Title><h3>Ms CHONG En Ting Grace</h3></Card.Title>
                           <p><em>NUS ARI</em></p>
@@ -94,7 +94,7 @@ const TeamPage = () => (
                       </Card.Body>
                   </Card>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
-                      <Card.Img src={caitlinPortrait} alt="Caitlin Celestine Fernandez" style={{height: `300px`, objectFit: `cover`}}/>
+                      <Card.Img src={caitlinPortrait} alt="Caitlin Celestine Fernandez" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>
                       <Card.Body>
                           <Card.Title><h3>Ms Caitlin Celestine FERNANDEZ</h3></Card.Title>
                           <p><em>NUS ARI</em></p>
