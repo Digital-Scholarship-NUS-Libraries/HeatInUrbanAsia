@@ -1,6 +1,6 @@
 import React, {useState } from 'react'
 import * as styles from './Navbar.module.scss'
-import { Container, Row, Col, Nav, Navbar, NavDropdown} from 'react-bootstrap'
+import { Container, Nav, Navbar, NavDropdown} from 'react-bootstrap'
 import {graphql, useStaticQuery} from "gatsby"
 
 
@@ -87,20 +87,6 @@ export default function NavBar({ menuItems }) {
                     <NavDropdown.Item href="/project">The Project</NavDropdown.Item>
                     <NavDropdown.Item href="/team">The Team</NavDropdown.Item>
                 </HoverControlledDropdown>
-                
-                {/*menuData.map((navItem, index) => {
-         if(navItem.length === 1) {
-             return <Nav.Link className={styles.navItemNoDropdown} href={navItem[0].slug} key={navItem[0].slug}>{navItem[0].name}</Nav.Link>
-         } else {
-             var rows=[];
-             for( var i =1; i < navItem.length; i++) {
-                rows.push(<NavDropdown.Item href={navItem[i].slug} target="_self" key={navItem[i].slug}>{navItem[i].name}</NavDropdown.Item>)
-             }
-             return  <HoverControlledDropdown className={styles.navItem} title={navItem[0].name} key={index}>
-                {rows}
-             </HoverControlledDropdown>
-            }
-                })*/}
             </Nav>
 
             </Navbar.Collapse>
