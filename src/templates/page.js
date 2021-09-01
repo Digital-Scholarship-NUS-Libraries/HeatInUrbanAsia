@@ -31,7 +31,7 @@ const pageFromGDocs = ({
           />
         )}
           <h1 style={{textAlign: `center`, marginBottom: `15px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>{pageTitle}</h1>
-          <h3 className="author" style={{textAlign: `center`}}>Written by: {author}</h3>
+          <h3 className="author" style={{textAlign: `center`}}>By {author}</h3>
       </Jumbotron>
       <Container>
           <Row>

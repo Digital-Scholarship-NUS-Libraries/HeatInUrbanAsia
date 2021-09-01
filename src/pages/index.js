@@ -96,7 +96,7 @@ const IndexPage = ({data}) => (
                               />
                               <Carousel.Caption style={{top: `50%`, bottom: `initial`, transform: `translateY(-50%)`, padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`, color: `#000`}}>
                                   <Link to={oneArticle.slug} style={{display: `block`, color: `#000`, textDecoration:`none`}}><h2>{oneArticle.name.split("_").pop()}</h2>
-                                  <h3>Written by: {oneArticle.author}</h3>
+                                  <h3>By {oneArticle.author}</h3>
                                       <p><strong>{oneArticle.description}</strong></p></Link>
                               </Carousel.Caption>
                           </Carousel.Item>

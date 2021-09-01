@@ -30,7 +30,7 @@ const BodiesPage = ({data}) => (
                           <Card style={{flex: `1 0 21%`, margin: `5px`, minWidth: `200px`}}>
                               <Card.Body>
                                   <Card.Title><Link to={oneArticle.slug} style={{color: `#000`, textDecoration:`none`}}><h2 style={{background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>{oneArticle.name}</h2></Link></Card.Title>
-                                  <p><em>Written by: {oneArticle.author}</em></p>
+                                  <p><em>By {oneArticle.author}</em></p>
                                   <p>{oneArticle.description}</p>
                               </Card.Body>
                               {oneArticle.cover ? (<GatsbyImage
