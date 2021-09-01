@@ -17,7 +17,7 @@ const citiesPage = ({data}) => (
         />
           <Row style={{margin: `0`, marginTop: `35px`, marginBottom: `35px`, textAlign: `center`}}>
               <Col md={{span: 8, offset: 2}} style={{padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`}}>
-                  <h1 style={{marginTop: `10px`, fontSize: `500%`}}>Cities</h1>
+                  <h1 style={{marginTop: `10px`, fontSize: `500%`, color: `#000`}}>Cities</h1>
               </Col>
           </Row>
       </Jumbotron>
@@ -29,7 +29,7 @@ const citiesPage = ({data}) => (
                       return (
                           <Card style={{flex: `1 0 21%`, margin: `5px`, minWidth: `200px`}}>
                               <Card.Body>
-                                  <Card.Title><Link to={oneArticle.slug} style={{color: `#000`, textDecoration:`none`}}><h2 style={{background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>{oneArticle.name}</h2></Link></Card.Title>
+                                  <Card.Title><Link to={oneArticle.slug} style={{color: `#000`, textDecoration:`none`}}><h2>{oneArticle.name}</h2></Link></Card.Title>
                                   <p><em>By {oneArticle.author}</em></p>
                                   <p>{oneArticle.description}</p>
                               </Card.Body>

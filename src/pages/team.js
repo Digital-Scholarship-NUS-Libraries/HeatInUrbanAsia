@@ -19,7 +19,7 @@ const TeamPage = () => (
       <Container style={{textAlign: `justify`}}>
           <Row style={{margin: `0`}}>
               <Col md={{span: 10, offset: 1}}>
-                  <h1 style={{textAlign: `center`, marginTop: `10px`, fontSize: `500%`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>The Team</h1>
+                  <h1 style={{textAlign: `center`, marginTop: `10px`, fontSize: `500%`}}>The Team</h1>
               <CardDeck style={{display: `flex`, flexWrap: `wrap`, margin: `auto`, textAlign: `center`, marginBottom: `60px`, justifyContent: `center`}}>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
                       <Card.Img src={gregoryPortrait} alt="Gregory Clancey" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>
@@ -80,7 +80,7 @@ const TeamPage = () => (
           </Row>
           <Row>
               <Col md={{span: 8, offset: 2}}>
-                  <h1 style={{textAlign: `center`, marginTop: `10px`, fontSize: `500%`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>Research Assistants</h1>
+                  <h1 style={{textAlign: `center`, marginTop: `10px`, fontSize: `500%`}}>Research Assistants</h1>
               <CardDeck style={{display: `flex`, flexWrap: `wrap`, margin: `auto`, textAlign: `center`, marginBottom: `60px`, justifyContent: `center`}}>
                   <Card style={{flex: `1 0 31%`, margin: `5px`, minWidth: `200px`}}>
                       <Card.Img src={gracePortrait} alt="Grace Chong En Ting" style={{height: `300px`, objectFit: `cover`, objectPosition: `top`}}/>

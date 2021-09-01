@@ -47,7 +47,7 @@ const IndexPage = ({data}) => (
       <Jumbotron style={{backgroundColor: `#fff`, padding: `0`, marginBottom: `0`}}>
           <Row style={{margin: `0`}}>
               <Col sm={{span: 8, offset: 2}}>
-                  <h1 style={{marginTop: `60px`, textAlign: `center`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>Explore Through Themes</h1>
+                  <h1 style={{marginTop: `60px`, textAlign: `center`}}>Explore Through Themes</h1>
               </Col>
           </Row>
           <Row style={{margin: `0`}}>
@@ -56,32 +56,32 @@ const IndexPage = ({data}) => (
                       <Card.Img variant="top" src={bodiesCardImage} alt="cover image" style={{height: `250px`, objectFit: `cover`, objectPosition: `top`}}/>
                       {/*<Card.Body style={{backgroundColor: `orange`}}>*/}
                       <Card.Body>
-                          <Card.Title><Link to="/bodies" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>Bodies</h2></Link></Card.Title>
+                          <Card.Title><Link to="/bodies" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`}}>Bodies</h2></Link></Card.Title>
                       </Card.Body>
                   </Card>
                   <Card style={{flex: `1 0 21%`, margin: `5px`, minWidth: `200px`}}>
                       <Card.Img variant="top" src={technologiesCardImage} alt="cover image" style={{height: `250px`, objectFit: `cover`, objectPosition: `top`}}/>
                       <Card.Body>
-                          <Card.Title><Link to="/technologies" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>Technologies</h2></Link></Card.Title>
+                          <Card.Title><Link to="/technologies" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`}}>Technologies</h2></Link></Card.Title>
                       </Card.Body>
                   </Card>
                   <Card style={{flex: `1 0 21%`, margin: `5px`, minWidth: `200px`}}>
                       <Card.Img variant="top" src={citiesCardImage} alt="cover image" style={{height: `250px`, objectFit: `cover`}}/>
                       <Card.Body>
-                          <Card.Title><Link to="/cities" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>Cities</h2></Link></Card.Title>
+                          <Card.Title><Link to="/cities" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`}}>Cities</h2></Link></Card.Title>
                       </Card.Body>
                   </Card>
                   <Card style={{flex: `1 0 21%`, margin: `5px`, minWidth: `200px`}}>
                       <Card.Img variant="top" src={regionCardImage} alt="cover image" style={{height: `250px`, objectFit: `cover`}}/>
                       <Card.Body>
-                          <Card.Title><Link to="/region" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>Region</h2></Link></Card.Title>
+                          <Card.Title><Link to="/region" style={{color: `#000`, textDecoration:`none`}}><h2 style={{marginTop: `10px`}}>Region</h2></Link></Card.Title>
                       </Card.Body>
                   </Card>
               </CardDeck>
           </Row>
           <Row style={{margin: `0`}}>
               <Col sm={{span: 8, offset: 2}}>
-                  <h1 style={{textAlign: `center`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>Selected Articles</h1>
+                  <h1 style={{textAlign: `center`}}>Selected Articles</h1>
               </Col>
           </Row>
           <Row style={{margin: `0`, textAlign: `center`, paddingBottom: `120px`}}>
@@ -95,8 +95,8 @@ const IndexPage = ({data}) => (
                                   style={{position: `initial`}}
                               />
                               <Carousel.Caption style={{top: `50%`, bottom: `initial`, transform: `translateY(-50%)`, padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`, color: `#000`}}>
-                                  <Link to={oneArticle.slug} style={{display: `block`, color: `#000`, textDecoration:`none`}}><h2>{oneArticle.name.split("_").pop()}</h2>
-                                  <h3>By {oneArticle.author}</h3>
+                                  <Link to={oneArticle.slug} style={{display: `block`, color: `#000`, textDecoration:`none`}}><h2 style={{color: `#000`}}>{oneArticle.name.split("_").pop()}</h2>
+                                      <h3 style={{color: `#000`}}>By {oneArticle.author}</h3>
                                       <p><strong>{oneArticle.description}</strong></p></Link>
                               </Carousel.Caption>
                           </Carousel.Item>
