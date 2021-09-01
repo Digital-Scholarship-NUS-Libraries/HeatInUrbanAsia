@@ -10,7 +10,7 @@ import Seo from "../components/seo"
 const citiesPage = ({data}) => (
   <Layout>
       <Seo title="Cities" />
-      <Jumbotron style={{position: `relative`, zIndex: `-2`, marginTop: `120px`, marginBottom: `120px`, padding: `0`}}>
+      <Jumbotron style={{marginTop: `120px`, marginBottom: `120px`, padding: `0`, background: `transparent`}}>
           <StaticImage
               src="../images/Banner_CitiesA.png"
               style={{position: `fixed`, top: 0, overflow:  `hidden`, zIndex: `-1`, width: `100%`, height: `100%`, objectFit: `cover`}}
@@ -21,7 +21,7 @@ const citiesPage = ({data}) => (
               </Col>
           </Row>
       </Jumbotron>
-      <Jumbotron style={{backgroundColor: `#fff`, padding: `0`}}>
+      <Jumbotron style={{backgroundColor: `#fff`, padding: `0`, marginBottom: `0`}}>
           <Row style={{margin: `0`}}>
               <Col md={{span: 8, offset: 2}}>
               <CardDeck style={{display: `flex`, flexWrap: `wrap`, margin: `auto`, textAlign: `center`, marginTop: `30px`, marginBottom: `60px`, justifyContent: `center`}}>

@@ -15,7 +15,8 @@ import {
 } from "react-leaflet";
 import Slider from "@material-ui/core/Slider";
 import Switch from "@material-ui/core/Switch";
-import { useMapData } from "../hooks/useMapData";
+import useHasMounted from "../hooks/useHasMounted.js";
+import useMapData from "../hooks/useMapData";
 import year1820 from "../images/mapImages/Year1820.webp";
 import year1841_town from "../images/mapImages/Year1841_town.webp";
 import year1869 from "../images/mapImages/Year1869.webp";
@@ -28,19 +29,26 @@ import isolineAverage2010 from "../images/mapImages/Average May temp 2010.png";
 import isolineAverage2015 from "../images/mapImages/Average May temp 2015.png";
 import isolineAverage2020 from "../images/mapImages/Average May temp 2020.png";
 
-const ProjectPage = () => (
+const ProjectPage = () => {
+  const mapData = useMapData();
+    console.log(mapData);
+    const hasMounted = useHasMounted();
+    return (
   <Layout>
       <Seo title="Interactive Map" />
       <Container style={{textAlign: `justify`}}>
           <Row>
-              <Col md={{span: 4}}>
-              </Col>
               <Col md={{span: 8}}>
+                  {hasMounted && (
+                      <p>we're on</p>
+                  )}
+              </Col>
+              <Col md={{span: 4}}>
               </Col>
           </Row>
       </Container>
 
   </Layout>
-)
+)}
 
 export default ProjectPage

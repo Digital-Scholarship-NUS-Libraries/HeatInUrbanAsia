@@ -15,25 +15,13 @@ module.exports = {
         folder: "1FZ4PlHetvvpseOmV-R1LX-HOx5piD1dk",
         createPages: true,
         debug: true,
+          imagesOptions : {width: `800`},
       },
     },
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: [
-          // You need some transformations?
-          // Checkout https://www.gatsbyjs.com/plugins/?=gatsby-remark
-          // And pick-up some plugins
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 1400,
-            },
-          },
-        ],
+        plugins: [`gatsby-remark-unwrap-images`,`gatsby-remark-images`],
       },
     },
     {

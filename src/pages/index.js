@@ -1,12 +1,12 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Jumbotron, Row, Col, Button, Card, CardDeck, Carousel } from 'react-bootstrap'
+import { Jumbotron, Row, Col, Card, CardDeck, Carousel } from 'react-bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
-import landmarksVideo from "../videos/sgLandmarksHSLcolorGradient.mp4";
+import landmarksVideo from "../videos/sgLandmarksOptimized.mp4";
 import sgVideoPoster from "../images/sgLandmarksPoster.jpg";
 import bodiesCardImage from "../images/Icon_Bodies.jpg";
 import technologiesCardImage from "../images/Icon_Technologies3.jpg";
@@ -16,7 +16,7 @@ import regionCardImage from "../images/Icon_Region.png";
 const IndexPage = ({data}) => (
   <Layout>
     <Seo title="Home" />
-      <Jumbotron style={{position: `relative`, zIndex: `-2`, marginTop: `220px`, marginBottom: `220px`, padding: `0`}}>
+      <Jumbotron style={{marginTop: `220px`, marginBottom: `220px`, padding: `0`, background: `transparent`}}>
           <video
           preload="auto"
           autoPlay
@@ -40,11 +40,11 @@ const IndexPage = ({data}) => (
             maps, stories, and images that help us to examine the past, present,
             and future of heat in urban Asia.
           </p>
-                  <Button href="/map" variant="secondary">Interactive Map</Button>
+                  <Link to="/map" className="btn btn-secondary">Interactive Map</Link>
               </Col>
           </Row>
       </Jumbotron>
-      <Jumbotron style={{backgroundColor: `#fff`, padding: `0`}}>
+      <Jumbotron style={{backgroundColor: `#fff`, padding: `0`, marginBottom: `0`}}>
           <Row style={{margin: `0`}}>
               <Col sm={{span: 8, offset: 2}}>
                   <h1 style={{marginTop: `60px`, textAlign: `center`, background: `linear-gradient(179deg, rgba(249,171,134,1), rgba(255,78,68,1))`, backgroundClip: `text`, WebkitBackgroundClip: `text`, color: `transparent`}}>Explore Through Themes</h1>
@@ -85,7 +85,7 @@ const IndexPage = ({data}) => (
               </Col>
           </Row>
           <Row style={{margin: `0`, textAlign: `center`, paddingBottom: `120px`}}>
-              <Carousel interval={3000} fade style={{width: `100%`, marginTop: `60px`}}>
+              <Carousel interval={null} fade style={{width: `100%`, marginTop: `60px`}}>
                   {data.allGoogleDocs.nodes.map((oneArticle, index) => {
                       return (
                           <Carousel.Item key={index} style={{height: `450px`}}>
@@ -94,7 +94,7 @@ const IndexPage = ({data}) => (
                                   alt={oneArticle.name}
                                   style={{position: `initial`}}
                               />
-                              <Carousel.Caption style={{top: `20px`, bottom: `auto`, padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`, color: `#000`}}>
+                              <Carousel.Caption style={{top: `50%`, bottom: `initial`, transform: `translateY(-50%)`, padding: `35px`, backgroundColor: `rgba(255,255,255,0.6)`, color: `#000`}}>
                                   <Link to={oneArticle.slug} style={{display: `block`, color: `#000`, textDecoration:`none`}}><h2>{oneArticle.name.split("_").pop()}</h2>
                                   <h3>Written by: {oneArticle.author}</h3>
                                       <p><strong>{oneArticle.description}</strong></p></Link>
