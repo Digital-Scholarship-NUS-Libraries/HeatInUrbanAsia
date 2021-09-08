@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Container, Row, Col } from "react-bootstrap"
 
@@ -40,6 +40,20 @@ const AsiaBounds = [
 
 const layersOpacity = 0.8
 
+//this needs to be a component that is a child of MapContainer so that we can access the map
+const UpdateBounds = ({isFocusSG}) => {
+    const map = useMap()
+    useEffect(() => {
+        if (!map) return
+        if (isFocusSG) {
+            map.fitBounds(SGBounds)
+        } else {
+            map.fitBounds(AsiaBounds)
+        }
+    }, [map, isFocusSG])
+    return null
+}
+
 const ProjectPage = () => {
   const mapData = useMapData()
   const hasMounted = useHasMounted()
@@ -48,22 +62,6 @@ const ProjectPage = () => {
   //const [bounds, setBounds] = useState(AsiaBounds)
   const [selectedYear, setSelectedYear] = useState(mapData.minYear)
     const [sideBarContent, setSideBarContent] = useState(<h2>Temperature Variations in Asian Cities</h2>)
-
-  //this needs to be a component that is a child of MapContainer so that we can access the map
-  function UpdateBounds() {
-    const map = useMap()
-    //maybe memoize this, or refactor with useEffect+useRef
-    if (isFocusSG) {
-      //setBounds(SGBounds)
-      //map.flyToBounds(SGBounds,{animate: true, duration: 0.75});
-      map.fitBounds(SGBounds)
-    } else {
-      //setBounds(AsiaBounds)
-      //map.flyToBounds(AsiaBounds,{animate: true, duration: 0.75});
-      map.fitBounds(AsiaBounds)
-    }
-    return <></>
-  }
 
   const asiaMapMarkers = mapData.regionData.map(oneCity => {
     return {
@@ -146,11 +144,11 @@ const ProjectPage = () => {
                 style={{ height: `700px` }}
               >
                   <ZoomControl position="topright" />
+                <UpdateBounds isFocusSG={isFocusSG} />
                 <TileLayer
                   attribution="Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
                   url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
                 />
-                <UpdateBounds focus={isFocusSG} />
                 <ImageOverlay
                   url={year1820}
                   zIndex={2}
