@@ -1,10 +1,10 @@
-import { graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
-import React from "react";
-import { Container, Jumbotron, Row, Col } from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Layout from "../components/Layout";
-import Seo from "../components/seo";
+import { graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
+import React from "react"
+import { Container, Jumbotron, Row, Col } from "react-bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css"
+import Layout from "../components/Layout"
+import Seo from "../components/seo"
 
 const pageFromGDocs = ({
   data: {
@@ -17,32 +17,41 @@ const pageFromGDocs = ({
     },
   },
 }) => {
-  const pageTitle = name.split("_").pop();
+  const pageTitle = name.split("_").pop()
   return (
     <Layout>
       <Seo title={pageTitle} description={description} />
-        <Jumbotron style={{backgroundColor: `#fff`, padding: `0`}}>
+      <Jumbotron style={{ backgroundColor: `#fff`, padding: `0` }}>
         {cover && (
           <GatsbyImage
             image={cover.image.childImageSharp.gatsbyImageData}
             alt={cover.alt}
             title={cover.title}
-              style={{height: `400px`, display: `flex`, justifyContent: `center`, marginBottom: `15px`}}
+            style={{
+              height: `400px`,
+              display: `flex`,
+              justifyContent: `center`,
+              marginBottom: `15px`,
+            }}
           />
         )}
-          <h1 style={{textAlign: `center`, marginBottom: `15px`}}>{pageTitle}</h1>
-            <h3 className="author" style={{textAlign: `center`, color: `#000`}}>By {author}</h3>
+        <h1 style={{ textAlign: `center`, marginBottom: `15px` }}>
+          {pageTitle}
+        </h1>
+        <h3 className="author" style={{ textAlign: `center`, color: `#000` }}>
+          By {author}
+        </h3>
       </Jumbotron>
       <Container>
-          <Row>
-              <Col md={{span: 8, offset: 2}} style={{textAlign: `justify`}}>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-              </Col>
-          </Row>
+        <Row>
+          <Col md={{ span: 8, offset: 2 }} style={{ textAlign: `justify` }}>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </Col>
+        </Row>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
 export const pageQuery = graphql`
   query Page($path: String!) {
@@ -64,6 +73,6 @@ export const pageQuery = graphql`
       description
     }
   }
-`;
+`
 
-export default pageFromGDocs;
+export default pageFromGDocs

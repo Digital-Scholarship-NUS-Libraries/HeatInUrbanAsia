@@ -3,7 +3,7 @@ module.exports = {
     title: `Heat in Urban Asia`,
     description: `for SEO`,
     author: `Asia Research Institute - NUS Libraries`,
-      siteUrl: `https://libds.nus.edu.sg`,
+    siteUrl: `https://libds.nus.edu.sg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,13 +15,13 @@ module.exports = {
         folder: "1FZ4PlHetvvpseOmV-R1LX-HOx5piD1dk",
         createPages: true,
         debug: true,
-          imagesOptions : {width: `800`},
+        imagesOptions: { width: `800` },
       },
     },
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: [`gatsby-remark-unwrap-images`,`gatsby-remark-images`],
+        plugins: [`gatsby-remark-unwrap-images`, `gatsby-remark-images`],
       },
     },
     {
@@ -36,7 +36,7 @@ module.exports = {
       options: {
         name: `data`,
         path: `${__dirname}/src/data`,
-      }
+      },
     },
     `gatsby-transformer-csv`,
     `gatsby-plugin-image`,
@@ -48,8 +48,8 @@ module.exports = {
           placeholder: `dominantColor`,
           breakpoints: [576, 768, 992, 1200, 1400],
           backgroundColor: `transparent`,
-        }
-      }
+        },
+      },
     },
     `gatsby-plugin-react-leaflet`,
     `gatsby-transformer-sharp`,

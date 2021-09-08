@@ -1,11 +1,19 @@
-import React from "react";
+import React from "react"
 import "@fontsource/roboto"
 import "@fontsource/bebas-neue"
 
-import {AnimatePresence} from 'framer-motion';
-export const wrapPageElement = ({element}) => (
+import { AnimatePresence } from "framer-motion"
+
+export function shouldUpdateScroll(prevRouterProps, { location }) {
+  window.scrollTo(0, 0)
+  const body = document.getElementsByTagName("body")[0]
+  body.scrollTop = 0
+  return false
+}
+
+export const wrapPageElement = ({ element }) => (
   <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
-);
+)
 /**
  * Implement Gatsby's Browser APIs in this file.
  *

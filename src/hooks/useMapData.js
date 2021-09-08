@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby"
 
 export default function useMapData() {
   const query = graphql`
@@ -16,7 +16,7 @@ export default function useMapData() {
               childImageSharp {
                 gatsbyImageData(
                   placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [AUTO]
                 )
               }
             }
@@ -43,30 +43,30 @@ export default function useMapData() {
         }
       }
     }
-  `;
+  `
 
-  const mapData = useStaticQuery(query) || {};
+  const mapData = useStaticQuery(query) || {}
 
   const uniqueYears = mapData.allCityMapDataCsv.edges.reduce(
     (accumulator, { node }) => {
       if (Number(node.Year) && !accumulator.includes(Number(node.Year))) {
-        accumulator.push(Number(node.Year));
+        accumulator.push(Number(node.Year))
       }
-      return accumulator;
+      return accumulator
     },
     []
-  );
+  )
 
-  const minYear = Math.min(...uniqueYears);
-  const maxYear = Math.max(...uniqueYears);
+  const minYear = Math.min(...uniqueYears)
+  const maxYear = Math.max(...uniqueYears)
 
   // the slider component requires defined marks, we will only have labels for max and min, to keep things readable
-  const marks = uniqueYears.map((year) => {
-    let oneMark = {};
-    oneMark.value = Number(year);
-    if ([minYear, maxYear].includes(year)) oneMark.label = year;
-    return oneMark;
-  });
+  const marks = uniqueYears.map(year => {
+    let oneMark = {}
+    oneMark.value = Number(year)
+    if ([minYear, maxYear].includes(year)) oneMark.label = year
+    return oneMark
+  })
 
   const regionData = mapData.allRegionMapDataCsv.edges.map(({ node }) => ({
     cityName: node.City_name,
@@ -75,7 +75,7 @@ export default function useMapData() {
     tempVar: node.Temperature_variation,
     Source: node.Source,
     Image: node.Image.childImageSharp.gatsbyImageData,
-  }));
+  }))
 
   const cityData = mapData.allCityMapDataCsv.edges.map(({ node }) => {
     if (!node.Latitude) {
@@ -84,7 +84,7 @@ export default function useMapData() {
         Year: node.Year,
         mapText: node.map_text,
         mapToUse: node.map_to_use,
-      };
+      }
     } else {
       return {
         Type: "station",
@@ -97,9 +97,9 @@ export default function useMapData() {
         AverageTemp: node.Annual_Average_Temperature___C_,
         stationImage: node.Image,
         Source: node.Source,
-      };
+      }
     }
-  });
+  })
 
   const shapedData = {
     uniqueYears,
@@ -108,7 +108,7 @@ export default function useMapData() {
     marks,
     regionData,
     cityData,
-  };
+  }
 
-  return shapedData;
+  return shapedData
 }
