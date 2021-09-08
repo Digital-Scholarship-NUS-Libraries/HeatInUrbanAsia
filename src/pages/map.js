@@ -392,9 +392,9 @@ const ProjectPage = () => {
                           </p>
                         )}
                         {oneMarker.avgTemp && (
-                            <p>Average temperature: <strong>{oneMarker.avgTemp.substring(0,oneMarker.avgTemp.indexOf(".")+2)}</strong></p>
+                            <p>Average temperature: <strong>{oneMarker.avgTemp.substring(0,oneMarker.avgTemp.indexOf(".")+2)}°C</strong></p>
                         )}
-                        {oneMarker.img && <GatsbyImage image={oneMarker.img} />}
+                        {oneMarker.img && <GatsbyImage image={oneMarker.img} alt={"graph showing the evolution of the themperature over the last century in " + oneMarker.title }/>}
                         {oneMarker.facts && <p>{oneMarker.facts}</p>}
                         {oneMarker.obs && <p>{oneMarker.obs}</p>}
                         {oneMarker.source && <p>{oneMarker.source}</p>}
