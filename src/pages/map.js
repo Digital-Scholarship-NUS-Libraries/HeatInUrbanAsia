@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Container, Row, Col } from "react-bootstrap"
 
@@ -7,7 +7,6 @@ import Seo from "../components/seo"
 import {
   MapContainer,
   Marker,
-  Popup,
   useMap,
   TileLayer,
   WMSTileLayer,
@@ -46,7 +45,7 @@ const ProjectPage = () => {
   const hasMounted = useHasMounted()
 
   const [isFocusSG, setIsFocusSG] = useState(false)
-  const [bounds, setBounds] = useState(AsiaBounds)
+  //const [bounds, setBounds] = useState(AsiaBounds)
   const [selectedYear, setSelectedYear] = useState(mapData.minYear)
     const [sideBarContent, setSideBarContent] = useState(<h2>Temperature Variations in Asian Cities</h2>)
 
@@ -55,11 +54,11 @@ const ProjectPage = () => {
     const map = useMap()
     //maybe memoize this, or refactor with useEffect+useRef
     if (isFocusSG) {
-      setBounds(SGBounds)
+      //setBounds(SGBounds)
       //map.flyToBounds(SGBounds,{animate: true, duration: 0.75});
       map.fitBounds(SGBounds)
     } else {
-      setBounds(AsiaBounds)
+      //setBounds(AsiaBounds)
       //map.flyToBounds(AsiaBounds,{animate: true, duration: 0.75});
       map.fitBounds(AsiaBounds)
     }
@@ -152,38 +151,6 @@ const ProjectPage = () => {
                   url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
                 />
                 <UpdateBounds focus={isFocusSG} />
-                {markerData.map((oneMarker, index) => {
-                  return (
-                      <Marker
-                          key={index}
-                          position={oneMarker.center}
-                          eventHandlers={{
-                              click: () => {
-                                  const newContent = (
-                                      <>
-                                          {isFocusSG ? <h1>{selectedYear}</h1> : <h2>Temperature Variations in Asian Cities</h2>}
-                        <h1>{oneMarker.title}</h1>
-                        {oneMarker.tmp && (
-                          <p>
-                            Temperature variation over the last century:{" "}
-                              <strong>{oneMarker.tmp}</strong>
-                          </p>
-                        )}
-                        {oneMarker.avgTemp && (
-                            <p>Average temperature: <strong>{oneMarker.avgTemp.substring(0,oneMarker.avgTemp.indexOf(".")+2)}</strong></p>
-                        )}
-                        {oneMarker.img && <GatsbyImage image={oneMarker.img} />}
-                        {oneMarker.facts && <p>{oneMarker.facts}</p>}
-                        {oneMarker.obs && <p>{oneMarker.obs}</p>}
-                        {oneMarker.source && <p>{oneMarker.source}</p>}
-                                      </>
-                                  )
-                                  setSideBarContent(newContent)
-                              }
-                          }}>
-                    </Marker>
-                  )
-                })}
                 <ImageOverlay
                   url={year1820}
                   zIndex={2}
@@ -409,6 +376,38 @@ const ProjectPage = () => {
                   ]}
                   opacity={isFocusSG && [2020].includes(selectedYear) ? 0.7 : 0}
                 />
+                {markerData.map((oneMarker, index) => {
+                  return (
+                      <Marker
+                          key={index}
+                          position={oneMarker.center}
+                          eventHandlers={{
+                              click: () => {
+                                  const newContent = (
+                                      <>
+                                          {isFocusSG ? <h1>{selectedYear}</h1> : <h2>Temperature Variations in Asian Cities</h2>}
+                        <h1>{oneMarker.title}</h1>
+                        {oneMarker.tmp && (
+                          <p>
+                            Temperature variation over the last century:{" "}
+                              <strong>{oneMarker.tmp}</strong>
+                          </p>
+                        )}
+                        {oneMarker.avgTemp && (
+                            <p>Average temperature: <strong>{oneMarker.avgTemp.substring(0,oneMarker.avgTemp.indexOf(".")+2)}</strong></p>
+                        )}
+                        {oneMarker.img && <GatsbyImage image={oneMarker.img} />}
+                        {oneMarker.facts && <p>{oneMarker.facts}</p>}
+                        {oneMarker.obs && <p>{oneMarker.obs}</p>}
+                        {oneMarker.source && <p>{oneMarker.source}</p>}
+                                      </>
+                                  )
+                                  setSideBarContent(newContent)
+                              }
+                          }}>
+                    </Marker>
+                  )
+                })}
               </MapContainer>
             )}
           </Col>
