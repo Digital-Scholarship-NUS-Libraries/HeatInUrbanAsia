@@ -21,12 +21,9 @@ export default function useTemperatureGraphData() {
   const tempData = useStaticQuery(query) || {}
 
   const shapedData = {
-    uniqueYears,
-    minYear,
-    maxYear,
-    marks,
-    regionData,
-    cityData,
+      "id": "min",
+      "color": "hsl(80, 70%, 50%)",
+      "data": tempData.minTemp.data,
   }
 
   return shapedData
