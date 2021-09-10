@@ -4,15 +4,15 @@ export default function useTemperatureGraphData() {
   const query = graphql`
     query TemperatureData {
       minTemp: allSGtemperatureRecordsCsv {
-          data: nodes {
-            x: year
-            y: min
+        data: nodes {
+          x: year
+          y: min
         }
       }
       avgTemp: allSGtemperatureRecordsCsv {
-          data: nodes {
-            x: year
-            y: mean
+        data: nodes {
+          x: year
+          y: mean
         }
       }
     }
@@ -20,11 +20,18 @@ export default function useTemperatureGraphData() {
 
   const tempData = useStaticQuery(query) || {}
 
-  const shapedData = {
-      "id": "min",
-      "color": "hsl(80, 70%, 50%)",
-      "data": tempData.minTemp.data,
-  }
+  const shapedData = [
+    {
+      id: "minimum",
+      color: "#67001f",
+      data: tempData.minTemp.data,
+    },
+    {
+      id: "average",
+      color: "#d6604d",
+      data: tempData.avgTemp.data,
+    },
+  ]
 
   return shapedData
 }

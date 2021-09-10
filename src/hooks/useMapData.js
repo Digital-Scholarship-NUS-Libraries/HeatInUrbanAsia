@@ -14,10 +14,7 @@ export default function useMapData() {
             Temperature_variation
             Image {
               childImageSharp {
-                gatsbyImageData(
-                  placeholder: BLURRED
-                  formats: [AUTO]
-                )
+                gatsbyImageData(placeholder: BLURRED, formats: [AUTO])
               }
             }
             field1

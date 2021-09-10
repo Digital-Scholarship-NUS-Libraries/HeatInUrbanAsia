@@ -60,10 +60,9 @@ const IndexPage = ({ data }) => (
             Asian cities are getting hotter. This is partly a global problem,
             resulting from anthropogenic climate change, and partly a local
             problem, caused by the excessive use of concrete and energy
-            intensive technologies. With a focus on four cities in Asia ---
-            Singapore, Seoul, Delhi, and Wuhan --- this website presents data,
-            maps, stories, and images that help us to examine the past, present,
-            and future of heat in urban Asia.
+            intensive technologies. This website presents data, maps, stories,
+            and images that help us to examine the past, present, and future of
+            heat in urban Asia.
           </p>
           <Link to="/map" className="btn btn-secondary">
             Interactive Map

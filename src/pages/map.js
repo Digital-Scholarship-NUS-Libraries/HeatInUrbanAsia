@@ -11,12 +11,13 @@ import {
   TileLayer,
   WMSTileLayer,
   ImageOverlay,
-    ZoomControl,
+  ZoomControl,
 } from "react-leaflet"
 import Slider from "@material-ui/core/Slider"
 import Switch from "@material-ui/core/Switch"
 import useHasMounted from "../hooks/useHasMounted.js"
 import useMapData from "../hooks/useMapData"
+import useTempGrapData from "../hooks/useGraphData"
 import year1820 from "../images/mapImages/Year1820.webp"
 import year1841_town from "../images/mapImages/Year1841_town.webp"
 import year1869 from "../images/mapImages/Year1869.webp"
@@ -41,27 +42,31 @@ const AsiaBounds = [
 const layersOpacity = 0.8
 
 //this needs to be a component that is a child of MapContainer so that we can access the map
-const UpdateBounds = ({isFocusSG}) => {
-    const map = useMap()
-    useEffect(() => {
-        if (!map) return
-        if (isFocusSG) {
-            map.fitBounds(SGBounds)
-        } else {
-            map.fitBounds(AsiaBounds)
-        }
-    }, [map, isFocusSG])
-    return null
+const UpdateBounds = ({ isFocusSG }) => {
+  const map = useMap()
+  useEffect(() => {
+    if (!map) return
+    if (isFocusSG) {
+      map.fitBounds(SGBounds)
+    } else {
+      map.fitBounds(AsiaBounds)
+    }
+  }, [map, isFocusSG])
+  return null
 }
 
 const ProjectPage = () => {
+  const graphData = useTempGrapData()
+  console.log(graphData)
   const mapData = useMapData()
   const hasMounted = useHasMounted()
 
   const [isFocusSG, setIsFocusSG] = useState(false)
   //const [bounds, setBounds] = useState(AsiaBounds)
   const [selectedYear, setSelectedYear] = useState(mapData.minYear)
-    const [sideBarContent, setSideBarContent] = useState(<h2>Temperature Variations in Asian Cities</h2>)
+  const [sideBarContent, setSideBarContent] = useState(
+    <h2>Temperature Variations in Asian Cities</h2>
+  )
 
   const asiaMapMarkers = mapData.regionData.map(oneCity => {
     return {
@@ -96,37 +101,42 @@ const ProjectPage = () => {
   )
 
   const handleChangeFocus = event => {
-      //the logic appears inverted here because state will change AFTER this has run, https://reactjs.org/docs/react-component.html#setstate
+    //the logic appears inverted here because state will change AFTER this has run, https://reactjs.org/docs/react-component.html#setstate
     if (isFocusSG) {
       setMarkerData(asiaMapMarkers)
-        setSideBarContent(<h2>Temperature Variations in Asian Cities</h2>)
+      setSideBarContent(<h2>Temperature Variations in Asian Cities</h2>)
     } else {
       setMarkerData(sgMapMarkers(selectedYear))
-        setSideBarContent(<><h1>{selectedYear}</h1>{yearMapContent(selectedYear)}</>)
+      setSideBarContent(
+        <>
+          <h1>{selectedYear}</h1>
+          {yearMapContent(selectedYear)}
+        </>
+      )
     }
-    setIsFocusSG(!isFocusSG)//even if this is at the start of the block
+    setIsFocusSG(!isFocusSG) //even if this is at the start of the block
   }
 
-    const yearMapContent = (givenYear) => {
-      return mapData.cityData
+  const yearMapContent = givenYear => {
+    return mapData.cityData
       .filter(
         oneStation =>
           oneStation.Type === "mapText" && Number(oneStation.Year) === givenYear
       )
       .map((oneStation, index) => {
-        return (
-            <p key={index}>{oneStation.mapText}</p>
-        )
+        return <p key={index}>{oneStation.mapText}</p>
       })
-    }
+  }
 
   const handleChangeYear = (event, newValue) => {
     setMarkerData(sgMapMarkers(newValue))
-      const newContent = yearMapContent(newValue)
-      setSideBarContent(<>
-          <h1>{newValue}</h1>
-          {newContent}
-          </>)
+    const newContent = yearMapContent(newValue)
+    setSideBarContent(
+      <>
+        <h1>{newValue}</h1>
+        {newContent}
+      </>
+    )
     setSelectedYear(newValue)
   }
 
@@ -135,15 +145,15 @@ const ProjectPage = () => {
       <Seo title="Interactive Map" />
       <Container fluid style={{ textAlign: `justify` }}>
         <Row>
-            <Col md={{ span: 9, order: "last" }} style={{padding: `0`}}>
+          <Col md={{ span: 9, order: "last" }} style={{ padding: `0` }}>
             {hasMounted && (
               <MapContainer
                 bounds={AsiaBounds}
                 scrollWheelZoom={false}
-                  zoomControl={false}
+                zoomControl={false}
                 style={{ height: `700px` }}
               >
-                  <ZoomControl position="topright" />
+                <ZoomControl position="topright" />
                 <UpdateBounds isFocusSG={isFocusSG} />
                 <TileLayer
                   attribution="Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
@@ -164,7 +174,7 @@ const ProjectPage = () => {
                 />
                 <ImageOverlay
                   url={year1841_town}
-                  zIndex={3}
+                  zIndex={2}
                   bounds={[
                     [1.2326721, 103.7699612],
                     [1.3808437, 103.9567873],
@@ -299,7 +309,7 @@ const ProjectPage = () => {
                 />
                 <ImageOverlay
                   url={isolineAverage2000}
-                  zIndex={3}
+                  zIndex={2}
                   bounds={[
                     [1.1740998, 103.5500069],
                     [1.505542, 104.0661863],
@@ -322,7 +332,7 @@ const ProjectPage = () => {
                 />
                 <ImageOverlay
                   url={isolineAverage2005}
-                  zIndex={3}
+                  zIndex={2}
                   bounds={[
                     [1.1746535, 103.5499958],
                     [1.5062091, 104.0664156],
@@ -345,7 +355,7 @@ const ProjectPage = () => {
                 />
                 <ImageOverlay
                   url={isolineAverage2010}
-                  zIndex={3}
+                  zIndex={2}
                   bounds={[
                     [1.1785755, 103.5385214],
                     [1.5145568, 104.0578985],
@@ -367,7 +377,7 @@ const ProjectPage = () => {
                 />
                 <ImageOverlay
                   url={isolineAverage2020}
-                  zIndex={3}
+                  zIndex={2}
                   bounds={[
                     [1.1752072, 103.5494245],
                     [1.506272, 104.067478],
@@ -376,40 +386,61 @@ const ProjectPage = () => {
                 />
                 {markerData.map((oneMarker, index) => {
                   return (
-                      <Marker
-                          key={index}
-                          position={oneMarker.center}
-                          eventHandlers={{
-                              click: () => {
-                                  const newContent = (
-                                      <>
-                                          {isFocusSG ? <h1>{selectedYear}</h1> : <h2>Temperature Variations in Asian Cities</h2>}
-                        <h1>{oneMarker.title}</h1>
-                        {oneMarker.tmp && (
-                          <p>
-                            Temperature variation over the last century:{" "}
-                              <strong>{oneMarker.tmp}</strong>
-                          </p>
-                        )}
-                        {oneMarker.avgTemp && (
-                            <p>Average temperature: <strong>{oneMarker.avgTemp.substring(0,oneMarker.avgTemp.indexOf(".")+2)}°C</strong></p>
-                        )}
-                        {oneMarker.img && <GatsbyImage image={oneMarker.img} alt={"graph showing the evolution of the themperature over the last century in " + oneMarker.title }/>}
-                        {oneMarker.facts && <p>{oneMarker.facts}</p>}
-                        {oneMarker.obs && <p>{oneMarker.obs}</p>}
-                        {oneMarker.source && <p>{oneMarker.source}</p>}
-                                      </>
-                                  )
-                                  setSideBarContent(newContent)
-                              }
-                          }}>
-                    </Marker>
+                    <Marker
+                      key={index}
+                      position={oneMarker.center}
+                      eventHandlers={{
+                        click: () => {
+                          const newContent = (
+                            <>
+                              {isFocusSG ? (
+                                <h1>{selectedYear}</h1>
+                              ) : (
+                                <h2>Temperature Variations in Asian Cities</h2>
+                              )}
+                              <h1>{oneMarker.title}</h1>
+                              {oneMarker.tmp && (
+                                <p>
+                                  Temperature variation over the last century:{" "}
+                                  <strong>{oneMarker.tmp}</strong>
+                                </p>
+                              )}
+                              {oneMarker.avgTemp && (
+                                <p>
+                                  Average temperature:{" "}
+                                  <strong>
+                                    {oneMarker.avgTemp.substring(
+                                      0,
+                                      oneMarker.avgTemp.indexOf(".") + 2
+                                    )}
+                                    °C
+                                  </strong>
+                                </p>
+                              )}
+                              {oneMarker.img && (
+                                <GatsbyImage
+                                  image={oneMarker.img}
+                                  alt={
+                                    "graph showing the evolution of the themperature over the last century in " +
+                                    oneMarker.title
+                                  }
+                                />
+                              )}
+                              {oneMarker.facts && <p>{oneMarker.facts}</p>}
+                              {oneMarker.obs && <p>{oneMarker.obs}</p>}
+                              {oneMarker.source && <p>{oneMarker.source}</p>}
+                            </>
+                          )
+                          setSideBarContent(newContent)
+                        },
+                      }}
+                    ></Marker>
                   )
                 })}
               </MapContainer>
             )}
           </Col>
-            <Col md={{ span: 3 }} style={{padding: `20px`}}>
+          <Col md={{ span: 3 }} style={{ padding: `20px` }}>
             <span>Asia</span>
             <Switch
               checked={isFocusSG}
@@ -431,9 +462,7 @@ const ProjectPage = () => {
                 marks={mapData.marks}
               />
             )}
-              <div id="sideBarContent">
-              {sideBarContent}
-              </div>
+            <div id="sideBarContent">{sideBarContent}</div>
           </Col>
         </Row>
       </Container>
