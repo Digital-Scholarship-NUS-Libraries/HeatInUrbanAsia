@@ -501,7 +501,7 @@ const ProjectPage = () => {
                     type="number"
                     interval="preserveStartEnd"
                     minTickGap={100}
-                    domain={[22, 29]}
+                    domain={[24, 29]}
                     tickSize={15}
                   />
                   <Tooltip />
