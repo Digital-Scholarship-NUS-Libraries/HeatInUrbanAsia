@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Container, Row, Col } from "react-bootstrap"
 
+import "leaflet/dist/leaflet.css"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 import {
@@ -25,9 +26,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts"
-import useHasMounted from "../hooks/useHasMounted.js"
+import useHasMounted from "../hooks/useHasMounted"
 import useMapData from "../hooks/useMapData"
 import useTempGrapData from "../hooks/useGraphData"
+import useConfigureLeaflet from "../hooks/useConfigureLeaflet"
 import year1820 from "../images/mapImages/Year1820.png"
 import year1841_town from "../images/mapImages/Year1841_town.png"
 import year1869 from "../images/mapImages/Year1869.png"
@@ -79,6 +81,7 @@ const ProjectPage = () => {
   const graphData = useTempGrapData()
   const mapData = useMapData()
   const hasMounted = useHasMounted()
+    useConfigureLeaflet()
 
   const [isFocusSG, setIsFocusSG] = useState(false)
   //const [bounds, setBounds] = useState(AsiaBounds)

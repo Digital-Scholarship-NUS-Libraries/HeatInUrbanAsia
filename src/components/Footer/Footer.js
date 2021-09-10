@@ -12,12 +12,12 @@ export default function Footer(props) {
               <Row className={styles.footerMinContent}>
                 <ListGroup className={styles.footer_listItem}>
                   <h2>Asia Research Institute</h2>
-                  <li>
+                  <p>
                     <span>
                       <a href="https://ari.nus.edu.sg/">ari.nus.edu.sg</a>
                       <br />
                     </span>
-                  </li>
+                  </p>
                 </ListGroup>
               </Row>
             </Col>
@@ -28,14 +28,14 @@ export default function Footer(props) {
               <Row className={styles.footerMinContent}>
                 <ListGroup className={styles.footer_listItem}>
                   <h2>NUS Libraries</h2>
-                  <li>
+                  <p>
                     <span>
                       <a href="https://libportal.nus.edu.sg">
                         libportal.nus.edu.sg
                       </a>
                       <br />
                     </span>
-                  </li>
+                  </p>
                 </ListGroup>
               </Row>
             </Col>
