@@ -1,37 +1,19 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 export default function useTemperatureGraphData() {
-  const query = graphql`
+    const query = graphql`
     query TemperatureData {
-      minTemp: allSGtemperatureRecordsCsv {
-        data: nodes {
-          x: year
-          y: min
-        }
-      }
-      avgTemp: allSGtemperatureRecordsCsv {
-        data: nodes {
-          x: year
-          y: mean
-        }
-      }
+  allSGtemperatureRecordsCsv(sort: {order: ASC, fields: year}) {
+    data: nodes {
+      year
+      min
+      mean
     }
+  }
+}
   `
 
   const tempData = useStaticQuery(query) || {}
 
-  const shapedData = [
-    {
-      id: "minimum",
-      color: "#67001f",
-      data: tempData.minTemp.data,
-    },
-    {
-      id: "average",
-      color: "#d6604d",
-      data: tempData.avgTemp.data,
-    },
-  ]
-
-  return shapedData
+  return tempData.allSGtemperatureRecordsCsv.data
 }

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Heat in Urban Asia`,
-    description: `for SEO`,
+    description: `Asian cities are getting hotter. This website presents data, maps, stories, and images that help us to examine the past, present, and future of heat in urban Asia.`,
     author: `Asia Research Institute - NUS Libraries`,
     siteUrl: `https://libds.nus.edu.sg`,
   },

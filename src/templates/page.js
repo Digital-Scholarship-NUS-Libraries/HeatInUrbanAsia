@@ -14,6 +14,7 @@ const pageFromGDocs = ({
       cover,
       childMarkdownRemark: { html },
       description,
+      coverFocus,
     },
   },
 }) => {
@@ -28,11 +29,12 @@ const pageFromGDocs = ({
             alt={cover.alt}
             title={cover.title}
             style={{
-              height: `400px`,
+              height: `424px`,
               display: `flex`,
               justifyContent: `center`,
               marginBottom: `15px`,
             }}
+              imgStyle={{ objectPosition: coverFocus }}
           />
         )}
         <h1 style={{ textAlign: `center`, marginBottom: `15px` }}>
@@ -58,6 +60,7 @@ export const pageQuery = graphql`
     page: googleDocs(slug: { eq: $path }) {
       name
       author
+      coverFocus
       cover {
         alt
         title

@@ -15,15 +15,16 @@ import {
 } from "react-leaflet"
 import Slider from "@material-ui/core/Slider"
 import Switch from "@material-ui/core/Switch"
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import useHasMounted from "../hooks/useHasMounted.js"
 import useMapData from "../hooks/useMapData"
 import useTempGrapData from "../hooks/useGraphData"
-import year1820 from "../images/mapImages/Year1820.webp"
-import year1841_town from "../images/mapImages/Year1841_town.webp"
-import year1869 from "../images/mapImages/Year1869.webp"
-import year1880 from "../images/mapImages/Year1880.webp"
-import year1890a from "../images/mapImages/Year1890a.webp"
-import year1890b from "../images/mapImages/Year1890b.webp"
+import year1820 from "../images/mapImages/Year1820.png"
+import year1841_town from "../images/mapImages/Year1841_town.png"
+import year1869 from "../images/mapImages/Year1869.png"
+import year1880 from "../images/mapImages/Year1880.png"
+import year1890a from "../images/mapImages/Year1890a.png"
+import year1890b from "../images/mapImages/Year1890b.png"
 import isolineAverage2000 from "../images/mapImages/Average May temp 2000.png"
 import isolineAverage2005 from "../images/mapImages/Average May temp 2005.png"
 import isolineAverage2010 from "../images/mapImages/Average May temp 2010.png"
@@ -55,9 +56,10 @@ const UpdateBounds = ({ isFocusSG }) => {
   return null
 }
 
+const defaultSidebarContent = (<><h2>Temperature Variations in Asian Cities</h2><p>This interactive map shows the temperature changes over time in Asian cities. Click on each mark to discover it.</p></>)
+
 const ProjectPage = () => {
   const graphData = useTempGrapData()
-  console.log(graphData)
   const mapData = useMapData()
   const hasMounted = useHasMounted()
 
@@ -65,7 +67,7 @@ const ProjectPage = () => {
   //const [bounds, setBounds] = useState(AsiaBounds)
   const [selectedYear, setSelectedYear] = useState(mapData.minYear)
   const [sideBarContent, setSideBarContent] = useState(
-    <h2>Temperature Variations in Asian Cities</h2>
+      defaultSidebarContent
   )
 
   const asiaMapMarkers = mapData.regionData.map(oneCity => {
@@ -99,12 +101,28 @@ const ProjectPage = () => {
   const [markerData, setMarkerData] = useState(
     isFocusSG ? sgMapMarkers(selectedYear) : asiaMapMarkers
   )
+    
+    const filterGraphData = myYear => {
+        return graphData.map((oneYear) => {
+            let rObj = {}
+            rObj.year = oneYear.year
+        if (oneYear.mean !== "" ) rObj.rawMean = oneYear.mean
+        if (oneYear.mean !== "" && oneYear.year <= myYear) rObj.mean = oneYear.mean
+            if (oneYear.min !== "" ) rObj.rawMin = oneYear.min
+            if (oneYear.min !== "" && oneYear.year <= myYear) rObj.min = oneYear.min
+            return rObj
+        })
+    }
+
+    const [filteredGraphData, setFilteredGraphData] = useState(
+        filterGraphData(selectedYear)
+    )
 
   const handleChangeFocus = event => {
     //the logic appears inverted here because state will change AFTER this has run, https://reactjs.org/docs/react-component.html#setstate
     if (isFocusSG) {
       setMarkerData(asiaMapMarkers)
-      setSideBarContent(<h2>Temperature Variations in Asian Cities</h2>)
+      setSideBarContent(defaultSidebarContent)
     } else {
       setMarkerData(sgMapMarkers(selectedYear))
       setSideBarContent(
@@ -130,6 +148,7 @@ const ProjectPage = () => {
 
   const handleChangeYear = (event, newValue) => {
     setMarkerData(sgMapMarkers(newValue))
+    setFilteredGraphData(filterGraphData(newValue))
     const newContent = yearMapContent(newValue)
     setSideBarContent(
       <>
@@ -151,7 +170,7 @@ const ProjectPage = () => {
                 bounds={AsiaBounds}
                 scrollWheelZoom={false}
                 zoomControl={false}
-                style={{ height: `700px` }}
+                style={{ height: `500px` }}
               >
                 <ZoomControl position="topright" />
                 <UpdateBounds isFocusSG={isFocusSG} />
@@ -439,8 +458,32 @@ const ProjectPage = () => {
                 })}
               </MapContainer>
             )}
+              {isFocusSG && (<ResponsiveContainer width="100%" height={300}>
+        <LineChart
+          width={500}
+          height={300}
+          data={filteredGraphData}
+          margin={{
+            top: 5,
+            right: 50,
+            left: 20,
+            bottom: 20,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="year" interval="preserveStartEnd" minTickGap={1000} tickSize={15}/>
+          <YAxis type="number" interval="preserveStartEnd" minTickGap={100} domain={[22, 29]} tickSize={15}/>
+          <Tooltip />
+          <Legend verticalAlign="top" height={36}/>
+            <Line type="monotone" dataKey="mean" name="average themperature (°C)" stroke="#ff4e44" tooltipType="none" strokeWidth={4} dot={false} activeDot={{ r: 8 }} />
+            <Line type="monotone" name="average themperature (°C)" dataKey="rawMean" legendType="none" stroke="#ff4e44" strokeWidth={1} dot={false} activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="min" name="minimum temperature (°C)" tooltipType="none" stroke="#73ccd1" strokeWidth={4} dot={false} activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="rawMin" name="minimum temperature (°C)" legendType="none" stroke="#73ccd1" strokeWidth={1} dot={false} activeDot={{ r: 8 }} />
+/>
+        </LineChart>
+      </ResponsiveContainer>)}
           </Col>
-          <Col md={{ span: 3 }} style={{ padding: `20px` }}>
+            <Col md={{ span: 3 }} style={{ padding: `20px`, paddingBottom:`0`}}>
             <span>Asia</span>
             <Switch
               checked={isFocusSG}

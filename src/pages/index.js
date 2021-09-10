@@ -11,7 +11,6 @@ import bodiesCardImage from "../images/Icon_Bodies.jpg"
 import technologiesCardImage from "../images/Icon_Technologies3.jpg"
 import citiesCardImage from "../images/Icon_Cities.png"
 import regionCardImage from "../images/Icon_Region.png"
-import useTemperatureGraphData from "../hooks/useGraphData.js"
 
 const IndexPage = ({ data }) => (
   <Layout>
