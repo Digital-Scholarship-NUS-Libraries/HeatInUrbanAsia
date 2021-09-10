@@ -34,7 +34,7 @@ const pageFromGDocs = ({
               justifyContent: `center`,
               marginBottom: `15px`,
             }}
-              imgStyle={{ objectPosition: coverFocus }}
+            imgStyle={{ objectPosition: coverFocus }}
           />
         )}
         <h1 style={{ textAlign: `center`, marginBottom: `15px` }}>
