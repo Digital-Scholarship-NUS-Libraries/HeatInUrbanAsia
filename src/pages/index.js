@@ -14,7 +14,7 @@ import regionCardImage from "../images/Icon_Region.png"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <Seo title="Home" />
+    <Seo title="Heat in Urban Asia" />
     <Jumbotron
       style={{
         marginTop: `220px`,
