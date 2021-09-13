@@ -1,7 +1,8 @@
 import React from "react"
 import * as styles from "./Header.module.scss"
 import { Container } from "react-bootstrap"
-import { StaticImage } from "gatsby-plugin-image"
+//import { StaticImage } from "gatsby-plugin-image"
+import headerLogo from "../../images/NUSL_ARI_logo.png"
 import { Link } from "gatsby"
 
 export default function Header() {
@@ -9,13 +10,9 @@ export default function Header() {
     <Container fluid style={{ backgroundColor: `#FFF` }}>
       <Container className={styles.header}>
         <Link to="/">
-          <StaticImage
-            src="../../images/NUSL_ARI_logo.png"
+          <img
+            src={headerLogo}
             alt="NUS LOGO"
-            layout="fixed"
-            loading="eager"
-            position="0 0"
-            objectFit="contain"
           />
         </Link>
       </Container>

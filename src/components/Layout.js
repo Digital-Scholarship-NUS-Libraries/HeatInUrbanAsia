@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
           className={styles.contentContainer}
           initial={{ opacity: 0, x: 0 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 200 }}
+          exit={{ opacity: 0, x: 0 }}
           transition={{
             type: "spring",
             mass: 0.35,
