@@ -181,7 +181,7 @@ const IndexPage = ({ data }) => (
       </Row>
       <Row style={{ margin: `0`, textAlign: `center`, paddingBottom: `120px` }}>
         <Carousel
-          interval={null}
+          interval={3000}
           fade
           style={{ width: `100%`, marginTop: `60px` }}
         >
@@ -232,7 +232,6 @@ const IndexPage = ({ data }) => (
 export const query = graphql`
   query carouselArticles {
     allGoogleDocs(
-      limit: 4
       filter: { cover: { image: { size: { gt: 10 } } }, featured: { eq: true } }
       sort: { order: DESC, fields: date }
     ) {
