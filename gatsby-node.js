@@ -1,7 +1,10 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const path = require('path');
+const fs = require('fs');
 
-// You can delete this file if you're not using it
+exports.onPostBuild = function() {
+  fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'public-nuslibraries-dsprojects-heatinurbanasia'));
+
+  fs.mkdirSync(path.join(__dirname, 'public'));
+
+  fs.renameSync(path.join(__dirname, 'public-nuslibraries-dsprojects-heatinurbanasia'), path.join(__dirname, 'public', 'nuslibraries', 'dsprojects', 'heatinurbanasia'));
+};

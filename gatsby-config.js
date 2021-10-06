@@ -1,4 +1,5 @@
 module.exports = {
+    pathPrefix: `/nuslibraries/dsprojects/heatinurbanasia`,
   siteMetadata: {
     title: `Heat in Urban Asia`,
     description: `Asian cities are getting hotter. This website presents data, maps, stories, and images that help us to examine the past, present, and future of heat in urban Asia.`,

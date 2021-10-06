@@ -51,7 +51,7 @@ const TeamPage = () => (
                   <em>NUS ARI (Lead PI)</em>
                 </p>
                 <a href="mailto:hisgkc@nus.edu.sg" style={{ display: `block` }}>
-                  hisgkc@nus.edu.sg
+                  email
                 </a>
                 <a href="https://ari.nus.edu.sg/people/aprof-gregory-clancey/">
                   profile
@@ -79,7 +79,7 @@ const TeamPage = () => (
                   href="mailto:fwilliamson@smu.edu.sg"
                   style={{ display: `block` }}
                 >
-                  fwilliamson@smu.edu.sg
+                  email
                 </a>
                 <a href="https://faculty.smu.edu.sg/profile/fiona-clare-williamson-1066">
                   profile
@@ -107,7 +107,7 @@ const TeamPage = () => (
                   href="mailto:jiathwee@nus.edu.sg"
                   style={{ display: `block` }}
                 >
-                  jiathwee@nus.edu.sg
+                  email
                 </a>
                 <a href="https://www.sde.nus.edu.sg/arch/staffs/chang-jiat-hwee-dr/">
                   profile
@@ -135,7 +135,7 @@ const TeamPage = () => (
                   href="mailto:christopher.j.courtney@durham.ac.uk"
                   style={{ display: `block` }}
                 >
-                  christopher.j.courtney@durham.ac.uk
+                  email
                 </a>
                 <a href="https://www.dur.ac.uk/research/directory/staff/?id=17479">
                   profile
@@ -154,13 +154,13 @@ const TeamPage = () => (
               />
               <Card.Body>
                 <Card.Title>
-                  <h3>Dr. Yoonhee JUNG</h3>
+                    <h3>Dr. Yoonhee JUNG<br/>&nbsp;</h3>
                 </Card.Title>
                 <p>
                   <em>NUS ARI</em>
                 </p>
                 <a href="mailto:ariyhj@nus.edu.sg" style={{ display: `block` }}>
-                  ariyhj@nus.edu.sg
+                  email
                 </a>
                 <a href="https://ari.nus.edu.sg/people/dr-yoonhee-jung/">
                   profile
@@ -185,7 +185,7 @@ const TeamPage = () => (
                   <em>NUS ARI</em>
                 </p>
                 <a href="mailto:ariac@nus.edu.sg" style={{ display: `block` }}>
-                  ariac@nus.edu.sg
+                  email
                 </a>
                 <a href="https://ari.nus.edu.sg/people/ashawari-chaudhuri/">
                   profile
@@ -233,7 +233,7 @@ const TeamPage = () => (
                   href="mailto:grace.chongenting@gmail.com"
                   style={{ display: `block` }}
                 >
-                  grace.chongenting@gmail.com
+                  email
                 </a>
                 <a href="https://ari.nus.edu.sg/people/ms-grace-chong/">
                   profile
@@ -261,7 +261,7 @@ const TeamPage = () => (
                   href="mailto:caitlin@nus.edu.sg"
                   style={{ display: `block` }}
                 >
-                  caitlin@nus.edu.sg
+                  email
                 </a>
                 <a href="https://sg.linkedin.com/in/caitlin-c-fernandez">
                   profile

@@ -192,6 +192,7 @@ const IndexPage = ({ data }) => (
                   image={oneArticle.cover.image.childImageSharp.gatsbyImageData}
                   alt={oneArticle.name}
                   style={{ position: `initial` }}
+                  imgStyle={{ objectPosition: oneArticle.coverFocus }}
                 />
                 <Carousel.Caption
                   style={{
@@ -240,6 +241,7 @@ export const query = graphql`
         author
         description
         slug
+        coverFocus
         cover {
           image {
             childImageSharp {

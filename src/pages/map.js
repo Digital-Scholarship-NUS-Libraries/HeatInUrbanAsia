@@ -459,7 +459,7 @@ const ProjectPage = () => {
                                 <GatsbyImage
                                   image={oneMarker.img}
                                   alt={
-                                    "graph showing the evolution of the themperature over the last century in " +
+                                    "graph showing the evolution of the temperature over the last century in " +
                                     oneMarker.title
                                   }
                                 />
@@ -509,7 +509,7 @@ const ProjectPage = () => {
                   <Line
                     type="monotone"
                     dataKey="mean"
-                    name="average themperature (°C)"
+                    name="average temperature (°C)"
                     stroke="#ff4e44"
                     tooltipType="none"
                     strokeWidth={4}
@@ -518,7 +518,7 @@ const ProjectPage = () => {
                   />
                   <Line
                     type="monotone"
-                    name="average themperature (°C)"
+                    name="average temperature (°C)"
                     dataKey="rawMean"
                     legendType="none"
                     stroke="#ff4e44"
