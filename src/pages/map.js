@@ -576,6 +576,16 @@ const ProjectPage = () => {
             <div id="sideBarContent">{sideBarContent}</div>
           </Col>
         </Row>
+          <Row style={{ marginTop: `60px` }}>
+        <Col md={{ span: 9, offset: 3 }}>
+            <hr />
+            <p>Content by Fiona Williamson and Grace Chong.</p>
+            <p>Isotherm maps by Grace (using GIS).</p>
+            <p>Historical maps from <a href="https://www.nas.gov.sg/archivesonline/maps_building_plans/">National Archives Singapore</a> and <a href="https://libmaps.nus.edu.sg/">Historical Maps of Singapore</a>.</p>
+            <p>Temperature data from <a href="http://www.weather.gov.sg/climate-historical-daily/">Meteorological Society of Singapore</a>.</p>
+            <p>Put together by Gaetan Boisson (NUS Libraries Digital Scholarship).</p>
+        </Col> 
+      </Row>
       </Container>
     </Layout>
   )
