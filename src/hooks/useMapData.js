@@ -28,14 +28,12 @@ export default function useMapData() {
             Latitude
             Longitude
             Location
-            Image
             Interesting_facts
-            Annual_Average_Temperature___C_
+            Annual_Average_Mean_Temperature___C_
             Observer_or_Authorising_Officer
             Source
             Year
             map_text
-            map_to_use
           }
         }
       }
@@ -80,7 +78,6 @@ export default function useMapData() {
         Type: "mapText",
         Year: node.Year,
         mapText: node.map_text,
-        mapToUse: node.map_to_use,
       }
     } else {
       return {
@@ -91,7 +88,7 @@ export default function useMapData() {
         Location: node.Location,
         Observer: node.Observer_or_Authorising_Officer,
         InterestingFacts: node.Interesting_facts,
-        AverageTemp: node.Annual_Average_Temperature___C_,
+        AverageTemp: node.Annual_Average_Mean_Temperature___C_,
         stationImage: node.Image,
         Source: node.Source,
       }
