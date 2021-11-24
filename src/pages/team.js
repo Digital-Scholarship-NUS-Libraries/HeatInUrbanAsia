@@ -11,17 +11,19 @@ import fionaPortrait from "../images/Team_Fiona_Williamson.png"
 import gracePortrait from "../images/Team_Grace_Chong.png"
 import gregoryPortrait from "../images/Team_Gregory_Clancey.png"
 import yoonheePortrait from "../images/Team_Yoonhee_Jung.jpg"
+import chinSeangPortrait from "../images/Team_Ng_Chin_Seang.jpg"
+import gaetanPortrait from "../images/sgLandmarksPoster.jpg"
 
 const TeamPage = () => (
   <Layout>
-    <Seo title="The Team" />
+    <Seo title="Project Team" />
     <Container style={{ textAlign: `justify` }}>
       <Row style={{ margin: `0` }}>
         <Col md={{ span: 10, offset: 1 }}>
           <h1
             style={{ textAlign: `center`, marginTop: `10px`, fontSize: `500%` }}
           >
-            The Team
+            Project Team
           </h1>
           <CardDeck
             style={{
@@ -48,7 +50,7 @@ const TeamPage = () => (
                   <h3>Associate Prof. Dr. Gregory CLANCEY</h3>
                 </Card.Title>
                 <p>
-                  <em>NUS ARI (Lead PI)</em>
+                  <em>NUS ARI (PI)</em>
                 </p>
                 <a href="mailto:hisgkc@nus.edu.sg" style={{ display: `block` }}>
                   email
@@ -73,7 +75,7 @@ const TeamPage = () => (
                   <h3>Associate Prof. Dr. Fiona WILLIAMSON</h3>
                 </Card.Title>
                 <p>
-                  <em>SMU</em>
+                  <em>SMU (Co-PI)</em>
                 </p>
                 <a
                   href="mailto:fwilliamson@smu.edu.sg"
@@ -101,7 +103,7 @@ const TeamPage = () => (
                   <h3>Associate Prof. Dr. CHANG Jiat-Hwee</h3>
                 </Card.Title>
                 <p>
-                  <em>NUS Architecture</em>
+                  <em>NUS Architecture (Co-PI)</em>
                 </p>
                 <a
                   href="mailto:jiathwee@nus.edu.sg"
@@ -265,6 +267,76 @@ const TeamPage = () => (
                 </a>
                 <a href="https://sg.linkedin.com/in/caitlin-c-fernandez">
                   profile
+                </a>
+              </Card.Body>
+            </Card>
+          </CardDeck>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={{ span: 8, offset: 2 }}>
+          <h1
+            style={{ textAlign: `center`, marginTop: `10px`, fontSize: `500%` }}
+          >
+            Design and Implementation
+          </h1>
+          <CardDeck
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              margin: `auto`,
+              textAlign: `center`,
+              marginBottom: `60px`,
+              justifyContent: `center`,
+            }}
+          >
+            <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
+              <Card.Img
+                src={gaetanPortrait}
+                alt="Gaetan Boisson"
+                style={{
+                  height: `300px`,
+                  objectFit: `cover`,
+                  objectPosition: `top`,
+                }}
+              />
+              <Card.Body>
+                <Card.Title>
+                  <h3>Gaetan BOISSON</h3>
+                </Card.Title>
+                <p>
+                  <em>NUS Libraries</em>
+                </p>
+                <a
+                  href="mailto:gaetan@nus.edu.sg"
+                  style={{ display: `block` }}
+                >
+                  email
+                </a>
+              </Card.Body>
+            </Card>
+            <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
+              <Card.Img
+                src={chinSeangPortrait}
+                alt="Ng Chin Seang"
+                style={{
+                  height: `300px`,
+                  objectFit: `cover`,
+                  objectPosition: `top`,
+                }}
+              />
+              <Card.Body>
+                <Card.Title>
+                  <h3>NG Chin Seang</h3>
+                </Card.Title>
+                <p>
+                  <em>NUS Libraries</em>
+                </p>
+                <a
+                  href="mailto:e0407783@u.nus.edu"
+                  style={{ display: `block` }}
+                >
+                  email
                 </a>
               </Card.Body>
             </Card>
