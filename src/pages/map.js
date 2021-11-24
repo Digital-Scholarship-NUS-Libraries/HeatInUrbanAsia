@@ -154,6 +154,10 @@ const ProjectPage = () => {
     setIsFocusSG(!isFocusSG) //even if this is at the start of the block
   }
 
+    const contentToHTML = (content) => {
+        return {__html: content};
+    }
+
   const yearMapContent = givenYear => {
     return mapData.cityData
       .filter(
@@ -161,7 +165,7 @@ const ProjectPage = () => {
           oneStation.Type === "mapText" && Number(oneStation.Year) === givenYear
       )
       .map((oneStation, index) => {
-        return <p key={index}>{oneStation.mapText}</p>
+        return <p key={index} dangerouslySetInnerHTML={contentToHTML(oneStation.mapText)}></p>
       })
   }
 
@@ -447,11 +451,7 @@ const ProjectPage = () => {
                                 <p>
                                   Average temperature:{" "}
                                   <strong>
-                                    {oneMarker.avgTemp.substring(
-                                      0,
-                                      oneMarker.avgTemp.indexOf(".") + 2
-                                    )}
-                                    °C
+                                    {oneMarker.avgTemp}
                                   </strong>
                                 </p>
                               )}
@@ -464,7 +464,7 @@ const ProjectPage = () => {
                                   }
                                 />
                               )}
-                              {oneMarker.facts && <p>{oneMarker.facts}</p>}
+                              {oneMarker.facts && <p dangerouslySetInnerHTML={contentToHTML(oneMarker.facts)}></p>}
                               {oneMarker.obs && <p>{oneMarker.obs}</p>}
                               {oneMarker.source && <p>{oneMarker.source}</p>}
                             </>
@@ -583,7 +583,7 @@ const ProjectPage = () => {
             <p>Isotherm maps by Grace (using GIS).</p>
             <p>Historical maps from <a href="https://www.nas.gov.sg/archivesonline/maps_building_plans/">National Archives Singapore</a> and <a href="https://libmaps.nus.edu.sg/">Historical Maps of Singapore</a>.</p>
             <p>Temperature data from <a href="http://www.weather.gov.sg/climate-historical-daily/">Meteorological Society of Singapore</a>.</p>
-            <p>Put together by Gaetan Boisson (NUS Libraries Digital Scholarship).</p>
+            <p>Designed and implemented by Gaetan Boisson and Ng Chin Seang (<a href="https://nus.edu.sg/nuslibraries">NUS Libraries</a> Digital Scholarship).</p>
         </Col> 
       </Row>
       </Container>
