@@ -3,6 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 import { Container, Jumbotron, Row, Col } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
+import * as styles from "./page.module.scss"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
@@ -44,7 +45,7 @@ const pageFromGDocs = ({
           By {author}
         </h3>
       </Jumbotron>
-      <Container>
+      <Container className={styles.page}>
         <Row>
           <Col md={{ span: 8, offset: 2 }} style={{ textAlign: `justify` }}>
             <div dangerouslySetInnerHTML={{ __html: html }} />
