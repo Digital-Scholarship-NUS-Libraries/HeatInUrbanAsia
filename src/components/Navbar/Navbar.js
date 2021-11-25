@@ -112,7 +112,7 @@ export default function NavBar({ menuItems }) {
                   The Project
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/team">
-                  The Team
+                  Project Team
                 </NavDropdown.Item>
               </HoverControlledDropdown>
             </Nav>
