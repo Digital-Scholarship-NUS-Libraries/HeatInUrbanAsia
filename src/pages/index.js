@@ -1,16 +1,12 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import { Jumbotron, Row, Col, Card, CardDeck, Carousel } from "react-bootstrap"
 
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 import landmarksVideo from "../videos/sgLandmarksOptimized.mp4"
 import sgVideoPoster from "../images/sgLandmarksPoster.jpg"
-import bodiesCardImage from "../images/Icon_Bodies.jpg"
-import technologiesCardImage from "../images/Icon_Technologies3.jpg"
-import citiesCardImage from "../images/Icon_Cities.png"
-import regionCardImage from "../images/Icon_Region.png"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -80,6 +76,7 @@ const IndexPage = ({ data }) => (
         </Col>
       </Row>
       <Row style={{ margin: `0` }}>
+        <Col sm={{ span: 8, offset: 2 }}>
         <CardDeck
           style={{
             display: `flex`,
@@ -92,17 +89,14 @@ const IndexPage = ({ data }) => (
           }}
         >
           <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
-            <Card.Img
-              variant="top"
-              src={bodiesCardImage}
-              alt="cover image"
-              style={{
-                height: `250px`,
-                objectFit: `cover`,
-                objectPosition: `top`,
-              }}
-            />
-            {/*<Card.Body style={{backgroundColor: `orange`}}>*/}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Icon_Bodies.jpg"
+                  alt="a human body"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `250px`}}
+              />
             <Card.Body>
               <Card.Title>
                 <Link
@@ -115,16 +109,14 @@ const IndexPage = ({ data }) => (
             </Card.Body>
           </Card>
           <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
-            <Card.Img
-              variant="top"
-              src={technologiesCardImage}
-              alt="cover image"
-              style={{
-                height: `250px`,
-                objectFit: `cover`,
-                objectPosition: `top`,
-              }}
-            />
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Icon_Technologies3.jpg"
+                  alt="AC units on a roof"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `250px`}}
+              />
             <Card.Body>
               <Card.Title>
                 <Link
@@ -137,12 +129,14 @@ const IndexPage = ({ data }) => (
             </Card.Body>
           </Card>
           <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
-            <Card.Img
-              variant="top"
-              src={citiesCardImage}
-              alt="cover image"
-              style={{ height: `250px`, objectFit: `cover` }}
-            />
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Icon_Cities.png"
+                  alt="A painting of a busy street in Hong Kong"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `250px`}}
+              />
             <Card.Body>
               <Card.Title>
                 <Link
@@ -155,12 +149,14 @@ const IndexPage = ({ data }) => (
             </Card.Body>
           </Card>
           <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
-            <Card.Img
-              variant="top"
-              src={regionCardImage}
-              alt="cover image"
-              style={{ height: `250px`, objectFit: `cover` }}
-            />
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Icon_Region.png"
+                  alt="A map of Asia"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `250px`}}
+              />
             <Card.Body>
               <Card.Title>
                 <Link
@@ -173,6 +169,7 @@ const IndexPage = ({ data }) => (
             </Card.Body>
           </Card>
         </CardDeck>
+        </Col>
       </Row>
       <Row style={{ margin: `0` }}>
         <Col sm={{ span: 8, offset: 2 }}>
