@@ -87,7 +87,7 @@ const citiesPage = ({ data }) => (
                       image={
                         oneArticle.cover.image.childImageSharp.gatsbyImageData
                       }
-                      alt={oneArticle.name.split("_").pop()}
+                      alt={oneArticle.name}
                       objectFit="cover"
                       objectPosition="50% 50%"
                       style={{ height: `250px` }}
