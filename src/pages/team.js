@@ -1,18 +1,9 @@
 import * as React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import { Container, Row, Col, CardDeck, Card } from "react-bootstrap"
 
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
-import ashawariPortrait from "../images/Team_Ashawari_Chaudhuri.png"
-import caitlinPortrait from "../images/Team_Caitlin_Fernandez.jpg"
-import jiatHweePortrait from "../images/Team_Chang_Jiat-Hwee.png"
-import chrisPortrait from "../images/Team_Chris_Courtney.png"
-import fionaPortrait from "../images/Team_Fiona_Williamson.png"
-import gracePortrait from "../images/Team_Grace_Chong.png"
-import gregoryPortrait from "../images/Team_Gregory_Clancey.png"
-import yoonheePortrait from "../images/Team_Yoonhee_Jung.jpg"
-import chinSeangPortrait from "../images/Team_Ng_Chin_Seang.jpg"
-import gaetanPortrait from "../images/sgLandmarksPoster.jpg"
 
 const TeamPage = () => (
   <Layout>
@@ -36,14 +27,13 @@ const TeamPage = () => (
             }}
           >
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={gregoryPortrait}
-                alt="Gregory Clancey"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Team_Gregory_Clancey.png"
+                  alt="Gregory Clancey"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
@@ -61,14 +51,13 @@ const TeamPage = () => (
               </Card.Body>
             </Card>
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={fionaPortrait}
-                alt="Fiona Williamson"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Team_Fiona_Williamson.png"
+                  alt="Fiona Williamson"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
@@ -89,14 +78,13 @@ const TeamPage = () => (
               </Card.Body>
             </Card>
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={jiatHweePortrait}
-                alt="Jiat-Hwee Chang"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Team_Chang_Jiat-Hwee.png"
+                  alt="Jiat-Hwee Chang"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
@@ -117,14 +105,13 @@ const TeamPage = () => (
               </Card.Body>
             </Card>
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={chrisPortrait}
-                alt="Chris Courtney"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Team_Chris_Courtney.png"
+                  alt="Chris Courtney"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
@@ -145,14 +132,13 @@ const TeamPage = () => (
               </Card.Body>
             </Card>
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={yoonheePortrait}
-                alt="Yonhee Jung"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Team_Yoonhee_Jung.jpg"
+                  alt="Yoonhee Jung"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
@@ -170,14 +156,13 @@ const TeamPage = () => (
               </Card.Body>
             </Card>
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={ashawariPortrait}
-                alt="Ashawari Chaudhuri"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Team_Ashawari_Chaudhuri.png"
+                  alt="Ashawari Chaudhuri"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
@@ -215,14 +200,13 @@ const TeamPage = () => (
             }}
           >
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={gracePortrait}
-                alt="Grace Chong En Ting"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Team_Grace_Chong.png"
+                  alt="Grace Chong En Ting"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
@@ -243,14 +227,13 @@ const TeamPage = () => (
               </Card.Body>
             </Card>
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={caitlinPortrait}
-                alt="Caitlin Celestine Fernandez"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Team_Caitlin_Fernandez.jpg"
+                  alt="Caitlin Celestine Fernandez"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
@@ -291,14 +274,13 @@ const TeamPage = () => (
             }}
           >
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={gaetanPortrait}
-                alt="Gaetan Boisson"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/sgLandmarksPoster.jpg"
+                  alt="Gaetan Boisson"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
@@ -316,14 +298,13 @@ const TeamPage = () => (
               </Card.Body>
             </Card>
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
-              <Card.Img
-                src={chinSeangPortrait}
-                alt="Ng Chin Seang"
-                style={{
-                  height: `300px`,
-                  objectFit: `cover`,
-                  objectPosition: `top`,
-                }}
+              <StaticImage
+                className="card-img-top"
+                  src="../images/Team_Ng_Chin_Seang.jpg"
+                  alt="Ng Chin Seang"
+                  objectFit="cover"
+                  objectPosition="top"
+                  style={{height : `300px`}}
               />
               <Card.Body>
                 <Card.Title>
