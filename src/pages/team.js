@@ -29,11 +29,11 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Team_Gregory_Clancey.png"
-                  alt="Gregory Clancey"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/Team_Gregory_Clancey.png"
+                alt="Gregory Clancey"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>
@@ -53,11 +53,11 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Team_Fiona_Williamson.png"
-                  alt="Fiona Williamson"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/Team_Fiona_Williamson.png"
+                alt="Fiona Williamson"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>
@@ -80,11 +80,11 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Team_Chang_Jiat-Hwee.png"
-                  alt="Jiat-Hwee Chang"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/Team_Chang_Jiat-Hwee.png"
+                alt="Jiat-Hwee Chang"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>
@@ -107,11 +107,11 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Team_Chris_Courtney.png"
-                  alt="Chris Courtney"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/Team_Chris_Courtney.png"
+                alt="Chris Courtney"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>
@@ -134,15 +134,19 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Team_Yoonhee_Jung.jpg"
-                  alt="Yoonhee Jung"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/Team_Yoonhee_Jung.jpg"
+                alt="Yoonhee Jung"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>
-                    <h3>Dr. Yoonhee JUNG<br/>&nbsp;</h3>
+                  <h3>
+                    Dr. Yoonhee JUNG
+                    <br />
+                    &nbsp;
+                  </h3>
                 </Card.Title>
                 <p>
                   <em>NUS ARI</em>
@@ -158,11 +162,11 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Team_Ashawari_Chaudhuri.png"
-                  alt="Ashawari Chaudhuri"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/Team_Ashawari_Chaudhuri.png"
+                alt="Ashawari Chaudhuri"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>
@@ -202,11 +206,11 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Team_Grace_Chong.png"
-                  alt="Grace Chong En Ting"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/Team_Grace_Chong.png"
+                alt="Grace Chong En Ting"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>
@@ -229,11 +233,11 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Team_Caitlin_Fernandez.jpg"
-                  alt="Caitlin Celestine Fernandez"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/Team_Caitlin_Fernandez.jpg"
+                alt="Caitlin Celestine Fernandez"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>
@@ -276,11 +280,11 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/sgLandmarksPoster.jpg"
-                  alt="Gaetan Boisson"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/sgLandmarksPoster.jpg"
+                alt="Gaetan Boisson"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>
@@ -289,10 +293,7 @@ const TeamPage = () => (
                 <p>
                   <em>NUS Libraries</em>
                 </p>
-                <a
-                  href="mailto:gaetan@nus.edu.sg"
-                  style={{ display: `block` }}
-                >
+                <a href="mailto:gaetan@nus.edu.sg" style={{ display: `block` }}>
                   email
                 </a>
               </Card.Body>
@@ -300,11 +301,11 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Team_Ng_Chin_Seang.jpg"
-                  alt="Ng Chin Seang"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `300px`}}
+                src="../images/Team_Ng_Chin_Seang.jpg"
+                alt="Ng Chin Seang"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `300px` }}
               />
               <Card.Body>
                 <Card.Title>

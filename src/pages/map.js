@@ -81,7 +81,7 @@ const ProjectPage = () => {
   const graphData = useTempGrapData()
   const mapData = useMapData()
   const hasMounted = useHasMounted()
-    useConfigureLeaflet()
+  useConfigureLeaflet()
 
   const [isFocusSG, setIsFocusSG] = useState(false)
   //const [bounds, setBounds] = useState(AsiaBounds)
@@ -154,9 +154,9 @@ const ProjectPage = () => {
     setIsFocusSG(!isFocusSG) //even if this is at the start of the block
   }
 
-    const contentToHTML = (content) => {
-        return {__html: content};
-    }
+  const contentToHTML = content => {
+    return { __html: content }
+  }
 
   const yearMapContent = givenYear => {
     return mapData.cityData
@@ -165,7 +165,12 @@ const ProjectPage = () => {
           oneStation.Type === "mapText" && Number(oneStation.Year) === givenYear
       )
       .map((oneStation, index) => {
-        return <p key={index} dangerouslySetInnerHTML={contentToHTML(oneStation.mapText)}></p>
+        return (
+          <p
+            key={index}
+            dangerouslySetInnerHTML={contentToHTML(oneStation.mapText)}
+          ></p>
+        )
       })
   }
 
@@ -450,9 +455,7 @@ const ProjectPage = () => {
                               {oneMarker.avgTemp && (
                                 <p>
                                   Average temperature:{" "}
-                                  <strong>
-                                    {oneMarker.avgTemp}
-                                  </strong>
+                                  <strong>{oneMarker.avgTemp}</strong>
                                 </p>
                               )}
                               {oneMarker.img && (
@@ -464,7 +467,13 @@ const ProjectPage = () => {
                                   }
                                 />
                               )}
-                              {oneMarker.facts && <p dangerouslySetInnerHTML={contentToHTML(oneMarker.facts)}></p>}
+                              {oneMarker.facts && (
+                                <p
+                                  dangerouslySetInnerHTML={contentToHTML(
+                                    oneMarker.facts
+                                  )}
+                                ></p>
+                              )}
                               {oneMarker.obs && <p>{oneMarker.obs}</p>}
                               {oneMarker.source && <p>{oneMarker.source}</p>}
                             </>
@@ -576,16 +585,36 @@ const ProjectPage = () => {
             <div id="sideBarContent">{sideBarContent}</div>
           </Col>
         </Row>
-          <Row style={{ marginTop: `60px` }}>
-        <Col md={{ span: 9, offset: 3 }}>
+        <Row style={{ marginTop: `60px` }}>
+          <Col md={{ span: 9, offset: 3 }}>
             <hr />
             <p>Content by Fiona Williamson and Grace Chong.</p>
             <p>Isotherm maps by Grace (using GIS).</p>
-            <p>Historical maps from <a href="https://www.nas.gov.sg/archivesonline/maps_building_plans/">National Archives Singapore</a> and <a href="https://libmaps.nus.edu.sg/">Historical Maps of Singapore</a>.</p>
-            <p>Temperature data from <a href="http://www.weather.gov.sg/climate-historical-daily/">Meteorological Society of Singapore</a>.</p>
-            <p>Designed and implemented by Gaetan Boisson and Ng Chin Seang (<a href="https://nus.edu.sg/nuslibraries">NUS Libraries</a> Digital Scholarship).</p>
-        </Col> 
-      </Row>
+            <p>
+              Historical maps from{" "}
+              <a href="https://www.nas.gov.sg/archivesonline/maps_building_plans/">
+                National Archives Singapore
+              </a>{" "}
+              and{" "}
+              <a href="https://libmaps.nus.edu.sg/">
+                Historical Maps of Singapore
+              </a>
+              .
+            </p>
+            <p>
+              Temperature data from{" "}
+              <a href="http://www.weather.gov.sg/climate-historical-daily/">
+                Meteorological Society of Singapore
+              </a>
+              .
+            </p>
+            <p>
+              Designed and implemented by Gaetan Boisson and Ng Chin Seang (
+              <a href="https://nus.edu.sg/nuslibraries">NUS Libraries</a>{" "}
+              Digital Scholarship).
+            </p>
+          </Col>
+        </Row>
       </Container>
     </Layout>
   )

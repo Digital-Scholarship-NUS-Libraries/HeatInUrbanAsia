@@ -77,98 +77,98 @@ const IndexPage = ({ data }) => (
       </Row>
       <Row style={{ margin: `0` }}>
         <Col sm={{ span: 8, offset: 2 }}>
-        <CardDeck
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            margin: `auto`,
-            textAlign: `center`,
-            marginTop: `30px`,
-            marginBottom: `60px`,
-            justifyContent: `center`,
-          }}
-        >
-          <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
+          <CardDeck
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              margin: `auto`,
+              textAlign: `center`,
+              marginTop: `30px`,
+              marginBottom: `60px`,
+              justifyContent: `center`,
+            }}
+          >
+            <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Icon_Bodies.jpg"
-                  alt="a human body"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `250px`}}
+                src="../images/Icon_Bodies.jpg"
+                alt="a human body"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `250px` }}
               />
-            <Card.Body>
-              <Card.Title>
-                <Link
-                  to="/bodies"
-                  style={{ color: `#000`, textDecoration: `none` }}
-                >
-                  <h2 style={{ marginTop: `10px` }}>Bodies</h2>
-                </Link>
-              </Card.Title>
-            </Card.Body>
-          </Card>
-          <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
+              <Card.Body>
+                <Card.Title>
+                  <Link
+                    to="/bodies"
+                    style={{ color: `#000`, textDecoration: `none` }}
+                  >
+                    <h2 style={{ marginTop: `10px` }}>Bodies</h2>
+                  </Link>
+                </Card.Title>
+              </Card.Body>
+            </Card>
+            <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Icon_Technologies3.jpg"
-                  alt="AC units on a roof"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `250px`}}
+                src="../images/Icon_Technologies3.jpg"
+                alt="AC units on a roof"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `250px` }}
               />
-            <Card.Body>
-              <Card.Title>
-                <Link
-                  to="/technologies"
-                  style={{ color: `#000`, textDecoration: `none` }}
-                >
-                  <h2 style={{ marginTop: `10px` }}>Technologies</h2>
-                </Link>
-              </Card.Title>
-            </Card.Body>
-          </Card>
-          <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
+              <Card.Body>
+                <Card.Title>
+                  <Link
+                    to="/technologies"
+                    style={{ color: `#000`, textDecoration: `none` }}
+                  >
+                    <h2 style={{ marginTop: `10px` }}>Technologies</h2>
+                  </Link>
+                </Card.Title>
+              </Card.Body>
+            </Card>
+            <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Icon_Cities.png"
-                  alt="A painting of a busy street in Hong Kong"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `250px`}}
+                src="../images/Icon_Cities.png"
+                alt="A painting of a busy street in Hong Kong"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `250px` }}
               />
-            <Card.Body>
-              <Card.Title>
-                <Link
-                  to="/cities"
-                  style={{ color: `#000`, textDecoration: `none` }}
-                >
-                  <h2 style={{ marginTop: `10px` }}>Cities</h2>
-                </Link>
-              </Card.Title>
-            </Card.Body>
-          </Card>
-          <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
+              <Card.Body>
+                <Card.Title>
+                  <Link
+                    to="/cities"
+                    style={{ color: `#000`, textDecoration: `none` }}
+                  >
+                    <h2 style={{ marginTop: `10px` }}>Cities</h2>
+                  </Link>
+                </Card.Title>
+              </Card.Body>
+            </Card>
+            <Card style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                  src="../images/Icon_Region.png"
-                  alt="A map of Asia"
-                  objectFit="cover"
-                  objectPosition="top"
-                  style={{height : `250px`}}
+                src="../images/Icon_Region.png"
+                alt="A map of Asia"
+                objectFit="cover"
+                objectPosition="top"
+                style={{ height: `250px` }}
               />
-            <Card.Body>
-              <Card.Title>
-                <Link
-                  to="/region"
-                  style={{ color: `#000`, textDecoration: `none` }}
-                >
-                  <h2 style={{ marginTop: `10px` }}>Region</h2>
-                </Link>
-              </Card.Title>
-            </Card.Body>
-          </Card>
-        </CardDeck>
+              <Card.Body>
+                <Card.Title>
+                  <Link
+                    to="/region"
+                    style={{ color: `#000`, textDecoration: `none` }}
+                  >
+                    <h2 style={{ marginTop: `10px` }}>Region</h2>
+                  </Link>
+                </Card.Title>
+              </Card.Body>
+            </Card>
+          </CardDeck>
         </Col>
       </Row>
       <Row style={{ margin: `0` }}>
