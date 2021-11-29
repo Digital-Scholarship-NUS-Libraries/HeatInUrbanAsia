@@ -19,7 +19,7 @@ const pageFromGDocs = ({
     },
   },
 }) => {
-  const pageTitle = name.split("_").pop()
+  const pageTitle = name
   return (
     <Layout>
       <Seo title={pageTitle} description={description} />
