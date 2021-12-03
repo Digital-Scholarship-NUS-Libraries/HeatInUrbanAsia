@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 
 const TeamPage = () => (
   <Layout>
-    <Seo title="Project Team" />
+    <Seo title="The Team" />
     <Container style={{ textAlign: `justify` }}>
       <Row style={{ margin: `0` }}>
         <Col md={{ span: 10, offset: 1 }}>
