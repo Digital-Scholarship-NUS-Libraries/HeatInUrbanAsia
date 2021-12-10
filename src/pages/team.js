@@ -134,7 +134,7 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                src="../images/Team_Yoonhee_Jung.jpg"
+                src="../images/Team_Yoonhee_Jung.png"
                 alt="Yoonhee Jung"
                 objectFit="cover"
                 objectPosition="top"
