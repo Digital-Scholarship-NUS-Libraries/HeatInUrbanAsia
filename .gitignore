@@ -58,6 +58,9 @@ typings/
 .cache/
 public
 
+#nuslibraries build path
+nuslibraries
+
 # Mac files
 .DS_Store
 
