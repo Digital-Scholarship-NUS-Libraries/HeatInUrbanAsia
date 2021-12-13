@@ -4,7 +4,7 @@ module.exports = {
     title: `Heat in Urban Asia`,
     description: `Asian cities are getting hotter. This website presents data, maps, stories, and images that help us to examine the past, present, and future of heat in urban Asia.`,
     author: `Asia Research Institute - NUS Libraries`,
-    siteUrl: `https://libds.nus.edu.sg`,
+    siteUrl: `https://nus.edu.sg/nuslibraries/dsprojects/heatinurbanasia/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
