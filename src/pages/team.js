@@ -247,7 +247,7 @@ const TeamPage = () => (
                   <em>NUS ARI</em>
                 </p>
                 <a
-                  href="mailto:caitlin@nus.edu.sg"
+                  href="mailto:fernandezcaitlin297@gmail.com"
                   style={{ display: `block` }}
                 >
                   email
@@ -315,7 +315,7 @@ const TeamPage = () => (
                   <em>NUS Libraries</em>
                 </p>
                 <a
-                  href="mailto:e0407783@u.nus.edu"
+                  href="mailto:jasonng1000w@gmail.com"
                   style={{ display: `block` }}
                 >
                   email

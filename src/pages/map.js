@@ -32,10 +32,10 @@ import useTempGrapData from "../hooks/useGraphData"
 import useConfigureLeaflet from "../hooks/useConfigureLeaflet"
 import year1820 from "../images/mapImages/Year1820.jpg"
 import year1841_town from "../images/mapImages/Year1841_town.jpg"
-import year1869 from "../images/mapImages/Year1869.jpg"
-import year1880 from "../images/mapImages/Year1880.jpg"
-import year1890a from "../images/mapImages/Year1890a.jpg"
-import year1890b from "../images/mapImages/Year1890b.jpg"
+import year1869 from "../images/mapImages/Year1869.png"
+import year1880 from "../images/mapImages/Year1880.png"
+import year1890a from "../images/mapImages/Year1890a.png"
+import year1890b from "../images/mapImages/Year1890b.png"
 import isolineAverage2000 from "../images/mapImages/Average May temp 2000.png"
 import isolineAverage2005 from "../images/mapImages/Average May temp 2005.png"
 import isolineAverage2010 from "../images/mapImages/Average May temp 2010.png"
@@ -291,6 +291,10 @@ const ProjectPage = () => {
                     transparent: true,
                     format: "image/png",
                   }}
+                  bounds={[
+                    [1.213401, 103.717417],
+                    [1.398671, 103.921904],
+                  ]}
                   zIndex={2}
                   opacity={
                     isFocusSG && [1920, 1934].includes(selectedYear)
@@ -305,6 +309,10 @@ const ProjectPage = () => {
                     transparent: true,
                     format: "image/png",
                   }}
+                  bounds={[
+                    [1.162995, 103.596198],
+                    [1.539172, 104.02764],
+                  ]}
                   zIndex={2}
                   opacity={
                     isFocusSG && [1940].includes(selectedYear)
@@ -319,6 +327,10 @@ const ProjectPage = () => {
                     transparent: true,
                     format: "image/png",
                   }}
+                  bounds={[
+                    [1.157503, 103.627036],
+                    [1.475125, 104.085389],
+                  ]}
                   zIndex={2}
                   opacity={
                     isFocusSG && [1980].includes(selectedYear)
@@ -333,6 +345,10 @@ const ProjectPage = () => {
                     transparent: true,
                     format: "image/png",
                   }}
+                  bounds={[
+                    [1.157989, 103.630947],
+                    [1.473056, 104.084752],
+                  ]}
                   zIndex={2}
                   opacity={
                     isFocusSG && [1990].includes(selectedYear)
@@ -347,6 +363,10 @@ const ProjectPage = () => {
                     transparent: true,
                     format: "image/png",
                   }}
+                  bounds={[
+                    [1.159492, 103.605158],
+                    [1.475177, 104.058312],
+                  ]}
                   zIndex={2}
                   opacity={
                     isFocusSG && [2000].includes(selectedYear)
@@ -370,6 +390,10 @@ const ProjectPage = () => {
                     transparent: true,
                     format: "image/png",
                   }}
+                  bounds={[
+                    [1.063594, 103.609069],
+                    [1.487012, 104.133632],
+                  ]}
                   zIndex={2}
                   opacity={
                     isFocusSG && [2005].includes(selectedYear)
@@ -393,6 +417,10 @@ const ProjectPage = () => {
                     transparent: true,
                     format: "image/png",
                   }}
+                  bounds={[
+                    [1.129584, 103.604015],
+                    [1.478296, 104.05827],
+                  ]}
                   zIndex={2}
                   opacity={
                     isFocusSG && [2010, 2015].includes(selectedYear)
