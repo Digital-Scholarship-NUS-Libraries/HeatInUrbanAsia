@@ -29,7 +29,7 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                src="../images/Team_Gregory_Clancey.png"
+                src="../images/Team_Gregory_Clancey.jpg"
                 alt="Gregory Clancey"
                 objectFit="cover"
                 objectPosition="top"
@@ -53,7 +53,7 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                src="../images/Team_Fiona_Williamson.png"
+                src="../images/Team_Fiona_Williamson.jpg"
                 alt="Fiona Williamson"
                 objectFit="cover"
                 objectPosition="top"
@@ -80,7 +80,7 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                src="../images/Team_Chang_Jiat-Hwee.png"
+                src="../images/Team_Chang_Jiat-Hwee.jpg"
                 alt="Jiat-Hwee Chang"
                 objectFit="cover"
                 objectPosition="top"
@@ -107,7 +107,7 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                src="../images/Team_Chris_Courtney.png"
+                src="../images/Team_Chris_Courtney.jpg"
                 alt="Chris Courtney"
                 objectFit="cover"
                 objectPosition="top"
@@ -134,7 +134,7 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                src="../images/Team_Yoonhee_Jung.png"
+                src="../images/Team_Yoonhee_Jung.jpg"
                 alt="Yoonhee Jung"
                 objectFit="cover"
                 objectPosition="top"
@@ -162,7 +162,7 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                src="../images/Team_Ashawari_Chaudhuri.png"
+                src="../images/Team_Ashawari_Chaudhuri.jpg"
                 alt="Ashawari Chaudhuri"
                 objectFit="cover"
                 objectPosition="top"
@@ -206,7 +206,7 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                src="../images/Team_Grace_Chong.png"
+                src="../images/Team_Grace_Chong.jpg"
                 alt="Grace Chong En Ting"
                 objectFit="cover"
                 objectPosition="top"
@@ -280,7 +280,7 @@ const TeamPage = () => (
             <Card style={{ flex: `1 0 31%`, margin: `5px`, minWidth: `200px` }}>
               <StaticImage
                 className="card-img-top"
-                src="../images/sgLandmarksPoster.jpg"
+                src="../images/Team_Gaetan_Boisson.jpg"
                 alt="Gaetan Boisson"
                 objectFit="cover"
                 objectPosition="top"
