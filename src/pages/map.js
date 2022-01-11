@@ -503,7 +503,13 @@ const ProjectPage = () => {
                                 ></p>
                               )}
                               {oneMarker.obs && <p>{oneMarker.obs}</p>}
-                              {oneMarker.source && <p>{oneMarker.source}</p>}
+                              {oneMarker.source && (
+                                <p
+                                  dangerouslySetInnerHTML={contentToHTML(
+                                    oneMarker.source
+                                  )}
+                                ></p>
+                              )}
                             </>
                           )
                           setSideBarContent(newContent)
@@ -582,7 +588,6 @@ const ProjectPage = () => {
                     strokeWidth={1}
                     dot={false}
                     activeDot={{ r: 8 }}
-                  />
                   />
                 </LineChart>
               </ResponsiveContainer>
