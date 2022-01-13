@@ -2,7 +2,7 @@ import React from "react"
 import * as styles from "./Footer.module.scss"
 import { Row, Col, Container, ListGroup } from "react-bootstrap"
 
-export default function Footer(props) {
+export default function Footer() {
   return (
     <Container className={styles.footer}>
       <Container className={styles.footerTop}>

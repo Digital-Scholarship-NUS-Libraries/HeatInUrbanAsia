@@ -67,6 +67,7 @@ const regionPage = ({ data }) => (
               return (
                 <Card
                   style={{ flex: `1 0 21%`, margin: `5px`, minWidth: `200px` }}
+                  key={index}
                 >
                   <Card.Body>
                     <Card.Title>

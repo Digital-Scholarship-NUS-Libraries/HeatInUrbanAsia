@@ -137,7 +137,7 @@ const ProjectPage = () => {
     filterGraphData(selectedYear)
   )
 
-  const handleChangeFocus = event => {
+  const handleChangeFocus = () => {
     //the logic appears inverted here because state will change AFTER this has run, https://reactjs.org/docs/react-component.html#setstate
     if (isFocusSG) {
       setMarkerData(asiaMapMarkers)
@@ -174,7 +174,7 @@ const ProjectPage = () => {
       })
   }
 
-  const handleChangeYear = (event, newValue) => {
+  const handleChangeYear = (_, newValue) => {
     setMarkerData(sgMapMarkers(newValue))
     setFilteredGraphData(filterGraphData(newValue))
     const newContent = yearMapContent(newValue)

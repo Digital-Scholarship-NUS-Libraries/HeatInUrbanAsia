@@ -15,7 +15,7 @@ function HoverControlledDropdown(props) {
   )
 }
 
-export default function NavBar({ menuItems }) {
+export default function NavBar() {
   const data = useStaticQuery(graphql`
     query MenuQuery {
       bodies: allGoogleDocs(filter: { slug: { regex: "/^/01/" } }) {
