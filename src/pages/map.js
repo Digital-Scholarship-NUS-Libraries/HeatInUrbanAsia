@@ -598,34 +598,6 @@ const ProjectPage = () => {
                 </LineChart>
               </ResponsiveContainer>
             )}
-          </Col>
-          <Col md={{ span: 3 }} style={{ padding: `20px`, paddingBottom: `0` }}>
-            <span>Asia</span>
-            <Switch
-              checked={isFocusSG}
-              onChange={handleChangeFocus}
-              name="focus"
-              inputProps={{ "aria-label": "secondary checkbox" }}
-            />
-            <span>Singapore</span>
-            {isFocusSG && (
-              <Slider
-                min={mapData.minYear}
-                max={mapData.maxYear}
-                defaultValue={mapData.minYear}
-                value={selectedYear}
-                onChange={handleChangeYear}
-                aria-labelledby="discrete-slider-custom"
-                step={null}
-                valueLabelDisplay="off"
-                marks={mapData.marks}
-              />
-            )}
-            <div id="sideBarContent">{sideBarContent}</div>
-          </Col>
-        </Row>
-        <Row style={{ marginTop: `60px` }}>
-          <Col md={{ span: 9, offset: 3 }}>
             <hr />
             <p>Content by Fiona Williamson and Grace Chong.</p>
             <p>Isotherm maps by Grace (using GIS).</p>
@@ -652,6 +624,31 @@ const ProjectPage = () => {
               <a href="https://nus.edu.sg/nuslibraries">NUS Libraries</a>{" "}
               Digital Scholarship).
             </p>
+          </Col>
+          <Col md={{ span: 3 }} style={{ padding: `20px`, paddingBottom: `0` }}>
+            <span>Asia</span>
+            <Switch
+              checked={isFocusSG}
+              onChange={handleChangeFocus}
+              name="focus"
+              inputProps={{ "aria-label": "secondary checkbox" }}
+            />
+            <span>Singapore</span>
+            <p><em>Use the toggle switch above to explore in more detail the temperature variation in Asian Cities and the temperature history of Singapore.</em></p>
+            {isFocusSG && (
+              <Slider
+                min={mapData.minYear}
+                max={mapData.maxYear}
+                defaultValue={mapData.minYear}
+                value={selectedYear}
+                onChange={handleChangeYear}
+                aria-labelledby="discrete-slider-custom"
+                step={null}
+                valueLabelDisplay="off"
+                marks={mapData.marks}
+              />
+            )}
+            <div id="sideBarContent">{sideBarContent}</div>
           </Col>
         </Row>
       </Container>
