@@ -502,7 +502,13 @@ const ProjectPage = () => {
                                   )}
                                 ></p>
                               )}
-                              {oneMarker.obs && <p><em>Observer: </em><br/>{oneMarker.obs}</p>}
+                              {oneMarker.obs && (
+                                <p>
+                                  <em>Observer: </em>
+                                  <br />
+                                  {oneMarker.obs}
+                                </p>
+                              )}
                               {oneMarker.source && (
                                 <p
                                   dangerouslySetInnerHTML={contentToHTML(
