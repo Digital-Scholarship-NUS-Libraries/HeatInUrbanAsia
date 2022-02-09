@@ -626,14 +626,14 @@ const ProjectPage = () => {
             </p>
           </Col>
           <Col md={{ span: 3 }} style={{ padding: `20px`, paddingBottom: `0` }}>
-            <span>Asia</span>
+            <span style={{color: `#ff4e44`, fontWeight: `900`}}>Asia</span>
             <Switch
               checked={isFocusSG}
               onChange={handleChangeFocus}
               name="focus"
               inputProps={{ "aria-label": "secondary checkbox" }}
             />
-            <span>Singapore</span>
+            <span style={{color: `#ff4e44`, fontWeight: `900`}}>Singapore</span>
             <p><em>Use the toggle switch above to explore in more detail the temperature variation in Asian Cities and the temperature history of Singapore.</em></p>
             {isFocusSG && (
               <Slider
