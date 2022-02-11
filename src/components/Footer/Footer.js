@@ -30,8 +30,8 @@ export default function Footer() {
                   <h2>NUS Libraries</h2>
                   <p>
                     <span>
-                      <a href="https://libportal.nus.edu.sg">
-                        libportal.nus.edu.sg
+                      <a href="https://nus.edu.sg/nuslibraries">
+                        nus.edu.sg/nuslibraries
                       </a>
                       <br />
                     </span>
